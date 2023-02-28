@@ -31,7 +31,7 @@ struct ContentView: View {
             
             .navigationBarTitle("ScreenBreak")
             .navigationBarItems(trailing:
-                Image("logo")
+                Image("appLogo")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 70, height: 70)
