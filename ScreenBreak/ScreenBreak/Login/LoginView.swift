@@ -16,12 +16,13 @@ struct LoginView: View {
     @State private var isLoggedIn = false
     
     var body: some View {
-        NavigationView {
+        
             VStack {
                 TextField("Email", text: $email)
                     .padding(.vertical, 1.0)
                 SecureField("Password", text: $password)
                     .padding(.vertical, 1.0)
+                
                 Button("Login") {
                     Auth.auth().signIn(withEmail: email, password: password) { result, error in
                         if let error = error {
@@ -40,13 +41,13 @@ struct LoginView: View {
             .padding()
             .navigationTitle("Login")
             .navigationBarItems(trailing: NavigationLink(
-                destination: ContentView(),
+                destination: ContentView().navigationBarBackButtonHidden(true),
                 isActive: $isLoggedIn,
                 label: {
                     EmptyView()
                 }
+                
             ))
-        }
     }
 }
 

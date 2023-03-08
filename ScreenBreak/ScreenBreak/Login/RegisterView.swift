@@ -17,7 +17,6 @@ struct RegisterView: View {
     @State private var toRegister = false
     
     var body: some View {
-        NavigationView {
             VStack {
                 TextField("Email", text: $email)
                     .padding(.vertical, 1.0)
@@ -50,13 +49,12 @@ struct RegisterView: View {
             .padding()
             .navigationTitle("Register")
             .navigationBarItems(trailing: NavigationLink(
-                destination: ContentView(),
+                destination: ContentView().navigationBarBackButtonHidden(true),
                 isActive: $isLoggedIn,
                 label: {
                     EmptyView()
                 }
             ))
-        }
     }
 }
 

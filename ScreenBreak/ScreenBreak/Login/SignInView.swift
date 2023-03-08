@@ -14,28 +14,27 @@ struct SignInView: View {
     var body: some View {
         NavigationView {
             VStack {
-                NavigationLink(destination: LoginView(), tag: "login", selection: $selection){}
-                NavigationLink(destination: RegisterView(), tag: "reg", selection: $selection){}
-                Button{
-                    self.selection = "login"
-                } label: {
-                    Text("Login")
+                NavigationLink(destination: LoginView()){ Text("Login")
                         .frame(maxWidth: .infinity)
                 }
                 .buttonStyle(.bordered)
                 .buttonBorderShape(.capsule)
-                .scaledToFill()
                 
-                Button{
-                    self.selection = "reg"
-                } label: {
+                NavigationLink(destination: RegisterView()){
                     Text("Register an Account")
                         .frame(maxWidth: .infinity)
                 }
                 .buttonStyle(.bordered)
                 .buttonBorderShape(.capsule)
-                .scaledToFill()
-
+                
+                NavigationLink(destination: ContentView() .navigationBarBackButtonHidden(true))
+                {
+                    Text("SKIP (DELETE WHEN DEPLOYED)")
+                        .frame(maxWidth: .infinity)
+                }
+                .buttonStyle(.bordered)
+                .buttonBorderShape(.capsule)
+                
             }
             .padding()
             .cornerRadius(10)
@@ -43,6 +42,7 @@ struct SignInView: View {
             .padding()
             .navigationTitle("Sign In")
         }
+        
     }
 }
 
