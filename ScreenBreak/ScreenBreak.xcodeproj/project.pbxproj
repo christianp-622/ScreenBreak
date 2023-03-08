@@ -16,6 +16,8 @@
 		4813890729ABE0F6001B8A55 /* ScreenBreakTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4813890629ABE0F6001B8A55 /* ScreenBreakTests.swift */; };
 		4813891129ABE0F6001B8A55 /* ScreenBreakUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4813891029ABE0F6001B8A55 /* ScreenBreakUITests.swift */; };
 		4813891329ABE0F6001B8A55 /* ScreenBreakUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4813891229ABE0F6001B8A55 /* ScreenBreakUITestsLaunchTests.swift */; };
+		DDC1F64529B812D8008D0DD4 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = DDC1F64429B812D8008D0DD4 /* FirebaseAuth */; };
+		DDC1F64729B81364008D0DD4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DDC1F64629B81364008D0DD4 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,7 @@
 		4813890C29ABE0F6001B8A55 /* ScreenBreakUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScreenBreakUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4813891029ABE0F6001B8A55 /* ScreenBreakUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenBreakUITests.swift; sourceTree = "<group>"; };
 		4813891229ABE0F6001B8A55 /* ScreenBreakUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenBreakUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DDC1F64629B81364008D0DD4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDC1F64529B812D8008D0DD4 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +102,7 @@
 		481388EF29ABE0F2001B8A55 /* ScreenBreak */ = {
 			isa = PBXGroup;
 			children = (
+				DDC1F64629B81364008D0DD4 /* GoogleService-Info.plist */,
 				481388F029ABE0F2001B8A55 /* ScreenBreakApp.swift */,
 				481388F229ABE0F2001B8A55 /* ContentView.swift */,
 				481388F429ABE0F6001B8A55 /* Assets.xcassets */,
@@ -149,6 +154,9 @@
 			dependencies = (
 			);
 			name = ScreenBreak;
+			packageProductDependencies = (
+				DDC1F64429B812D8008D0DD4 /* FirebaseAuth */,
+			);
 			productName = ScreenBreak;
 			productReference = 481388ED29ABE0F2001B8A55 /* ScreenBreak.app */;
 			productType = "com.apple.product-type.application";
@@ -221,6 +229,9 @@
 				Base,
 			);
 			mainGroup = 481388E429ABE0F1001B8A55;
+			packageReferences = (
+				DDC1F64329B812D8008D0DD4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 481388EE29ABE0F2001B8A55 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -239,6 +250,7 @@
 			files = (
 				481388F829ABE0F6001B8A55 /* Preview Assets.xcassets in Resources */,
 				481388F529ABE0F6001B8A55 /* Assets.xcassets in Resources */,
+				DDC1F64729B81364008D0DD4 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,6 +603,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DDC1F64329B812D8008D0DD4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DDC1F64429B812D8008D0DD4 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DDC1F64329B812D8008D0DD4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		481388FB29ABE0F6001B8A55 /* ScreenBreak.xcdatamodeld */ = {
