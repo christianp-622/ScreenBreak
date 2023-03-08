@@ -22,7 +22,7 @@ struct ScreenBreakApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
-            ContentView().navigationTitle("Sign In")
+            SignInView().navigationTitle("Sign In")
         }
     }
 }

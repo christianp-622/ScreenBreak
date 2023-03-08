@@ -18,6 +18,9 @@
 		4813891329ABE0F6001B8A55 /* ScreenBreakUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4813891229ABE0F6001B8A55 /* ScreenBreakUITestsLaunchTests.swift */; };
 		DDC1F64529B812D8008D0DD4 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = DDC1F64429B812D8008D0DD4 /* FirebaseAuth */; };
 		DDC1F64729B81364008D0DD4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DDC1F64629B81364008D0DD4 /* GoogleService-Info.plist */; };
+		DDC1F64A29B81485008D0DD4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC1F64929B81485008D0DD4 /* LoginView.swift */; };
+		DDC1F64C29B814AE008D0DD4 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC1F64B29B814AE008D0DD4 /* SignInView.swift */; };
+		DDC1F64E29B814C4008D0DD4 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC1F64D29B814C4008D0DD4 /* RegisterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		4813891029ABE0F6001B8A55 /* ScreenBreakUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenBreakUITests.swift; sourceTree = "<group>"; };
 		4813891229ABE0F6001B8A55 /* ScreenBreakUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenBreakUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		DDC1F64629B81364008D0DD4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DDC1F64929B81485008D0DD4 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		DDC1F64B29B814AE008D0DD4 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		DDC1F64D29B814C4008D0DD4 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +108,7 @@
 		481388EF29ABE0F2001B8A55 /* ScreenBreak */ = {
 			isa = PBXGroup;
 			children = (
+				DDC1F64829B81465008D0DD4 /* Login */,
 				DDC1F64629B81364008D0DD4 /* GoogleService-Info.plist */,
 				481388F029ABE0F2001B8A55 /* ScreenBreakApp.swift */,
 				481388F229ABE0F2001B8A55 /* ContentView.swift */,
@@ -136,6 +143,16 @@
 				4813891229ABE0F6001B8A55 /* ScreenBreakUITestsLaunchTests.swift */,
 			);
 			path = ScreenBreakUITests;
+			sourceTree = "<group>";
+		};
+		DDC1F64829B81465008D0DD4 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				DDC1F64929B81485008D0DD4 /* LoginView.swift */,
+				DDC1F64B29B814AE008D0DD4 /* SignInView.swift */,
+				DDC1F64D29B814C4008D0DD4 /* RegisterView.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,9 +292,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDC1F64C29B814AE008D0DD4 /* SignInView.swift in Sources */,
 				481388FA29ABE0F6001B8A55 /* Persistence.swift in Sources */,
 				481388FD29ABE0F6001B8A55 /* ScreenBreak.xcdatamodeld in Sources */,
+				DDC1F64E29B814C4008D0DD4 /* RegisterView.swift in Sources */,
 				481388F329ABE0F2001B8A55 /* ContentView.swift in Sources */,
+				DDC1F64A29B81485008D0DD4 /* LoginView.swift in Sources */,
 				481388F129ABE0F2001B8A55 /* ScreenBreakApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
