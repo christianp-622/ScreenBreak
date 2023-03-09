@@ -1,5 +1,5 @@
 //
-//  appsView.swift
+//  AppsView.swift
 //  ScreenBreak
 //
 //  Created by Christian Pichardo on 3/7/23.
@@ -7,14 +7,19 @@
 
 import SwiftUI
 
-struct appsView: View {
+struct AppsView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            Text("Apps View")
+                .navigationTitle("Apps View")
+        }
+        .navigationViewStyle(.stack)
+      
     }
 }
 
-struct appsView_Previews: PreviewProvider {
+struct AppsView_Previews: PreviewProvider {
     static var previews: some View {
-        appsView()
+        AppsView()
     }
 }
