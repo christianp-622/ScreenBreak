@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreData
+import FamilyControls
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -24,11 +25,10 @@ struct ContentView: View {
                 biggestLosers()
                 Button("Set Time Limits"){
                     print("hello world")
-                }
+                }.buttonStyle(.bordered)
                 
             }
             .padding()
-            
             .navigationBarTitle("ScreenBreak")
             .navigationBarItems(trailing:
                 Image("appLogo")
