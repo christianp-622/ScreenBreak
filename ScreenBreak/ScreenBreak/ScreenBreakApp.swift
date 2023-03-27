@@ -9,9 +9,21 @@ import SwiftUI
 import DeviceActivity
 import FamilyControls
 import ManagedSettings
+import FirebaseCore
+
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+  func application(_ application: UIApplication,
+                   didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+    FirebaseApp.configure()
+
+    return true
+  }
+}
 
 @main
 struct ScreenBreakApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     let persistenceController = PersistenceController.shared
     let center = AuthorizationCenter.shared
     @StateObject var launchScreenManager = LaunchScreenManager()
