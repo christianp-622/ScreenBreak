@@ -10,8 +10,7 @@ import SwiftUI
 struct AppsView: View {
     var body: some View {
         NavigationView {
-            Text("Apps View")
-                .navigationTitle("Apps View")
+            ChartView()
         }
         .navigationViewStyle(.stack)
       

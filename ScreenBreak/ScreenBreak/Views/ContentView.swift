@@ -11,14 +11,19 @@ import FamilyControls
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
+    @EnvironmentObject var launchScreenManager: LaunchScreenManager
 
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<Item>
 
     var body: some View {
         TabBar()
+            .onAppear{
+                DispatchQueue
+                    .main
+                    .asyncAfter(deadline:.now() + 5){
+                        launchScreenManager.dismiss()
+                    }
+            }
+            
     }
 
 }
@@ -29,6 +34,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext).environmentObject(LaunchScreenManager())
     }
 }
