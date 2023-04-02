@@ -12,6 +12,7 @@ import DeviceActivity
 struct ChartView: View {
 
     @State private var context: DeviceActivityReport.Context = .init(rawValue: "Total Activity")
+    //@State private var context: DeviceActivityReport.Context = .init(rawValue: "Total Category")
     @State private var filter = DeviceActivityFilter(
         segment: .daily(
             during: Calendar.current.dateInterval(
@@ -24,16 +25,9 @@ struct ChartView: View {
 
     var body: some View {
         ZStack {
-            STProgressView()
             DeviceActivityReport(context, filter: filter)
         }
     }
 }
 
 
-struct ChartView_Previews: PreviewProvider {
-   
-    static var previews: some View {
-        ChartView()
-    }
-}

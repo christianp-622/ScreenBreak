@@ -7,11 +7,24 @@
 
 import SwiftUI
 
-struct TotalActivityView: View {
+struct TopThreeView: View {
     var activityReport: ActivityReport
     
     var body: some View {
+        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    }
+}
+
+struct TotalActivityView: View {
+    var activityReport: ActivityReport
+    
+    private let adaptiveColumns = [GridItem(.adaptive(minimum:100))]
+    private let numberColumns = [GridItem(.flexible()), GridItem(.flexible())]
+    private let fixedColumns =  [GridItem(.fixed(200)), GridItem(.fixed(200))]
+    
+    var body: some View {
         VStack {
+            /*
             Spacer(minLength: 50)
             Text("Total Screen Time")
             Spacer(minLength: 10)
@@ -22,29 +35,22 @@ struct TotalActivityView: View {
             Text("LongestActivity: \(activityReport.longestActivity?.description ?? "NIL")")
             Text("Categories: \(activityReport.categories.description)")
             Text("Name, numPickups, numNotifs, duration")
-            List(activityReport.apps) { app in
-                ListRow(eachApp: app)
+            */
+            NavigationView{
+                ScrollView{
+                    LazyVGrid(columns:adaptiveColumns, spacing:10){
+                        ForEach(activityReport.apps){ app in
+                            CardView(app:app)
+                        }
+                    }
+                }
+                .padding()
+                .navigationTitle("App Information")
             }
+           
         }
     }
 }
 
-struct ListRow: View {
-    var eachApp: AppDeviceActivity
-    var body: some View {
-        HStack {
-            Text(eachApp.displayName)
-            //Spacer()
-            //Text(eachApp.id)
-            Spacer()
-            Text("\(eachApp.numberOfPickups)")
-            Spacer()
-            Text("\(eachApp.numberOfNotifs)")
-            Spacer()
-            Text(String(eachApp.duration))
-            Spacer()
-            Text("\(eachApp.category)")
-        }
-    }
-}
+
 

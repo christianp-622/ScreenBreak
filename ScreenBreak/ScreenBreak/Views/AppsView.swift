@@ -13,7 +13,6 @@ struct AppsView: View {
             ChartView()
         }
         .navigationViewStyle(.stack)
-      
     }
 }
 

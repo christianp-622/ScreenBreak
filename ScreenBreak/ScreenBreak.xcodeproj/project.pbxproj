@@ -27,6 +27,32 @@
 		4846CFD829D1E94F005D018E /* DeviceActivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4846CF9C29CCA40C005D018E /* DeviceActivity.framework */; };
 		4846CFDB29D1E94F005D018E /* DeviceActivityMonitorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4846CFDA29D1E94F005D018E /* DeviceActivityMonitorExtension.swift */; };
 		4846CFE029D1E94F005D018E /* DeviceActivityMonitor.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 4846CFD729D1E94F005D018E /* DeviceActivityMonitor.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4846CFE529D313B1005D018E /* TotalCategoryReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4846CFE429D313B1005D018E /* TotalCategoryReport.swift */; };
+		4846CFE729D313FA005D018E /* CategoryChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4846CFE629D313FA005D018E /* CategoryChartView.swift */; };
+		4846CFE929D32208005D018E /* ExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4846CFE829D32208005D018E /* ExampleView.swift */; };
+		4846CFF029D49A48005D018E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4846CFEE29D49A1E005D018E /* CardView.swift */; };
+		4846CFF329D72FED005D018E /* RiveRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = 4846CFF229D72FED005D018E /* RiveRuntime */; };
+		4846CFFC29D73130005D018E /* house.riv in Resources */ = {isa = PBXBuildFile; fileRef = 4846CFF529D73130005D018E /* house.riv */; };
+		4846CFFD29D73130005D018E /* house.riv in Resources */ = {isa = PBXBuildFile; fileRef = 4846CFF529D73130005D018E /* house.riv */; };
+		4846CFFE29D73130005D018E /* house.riv in Resources */ = {isa = PBXBuildFile; fileRef = 4846CFF529D73130005D018E /* house.riv */; };
+		4846CFFF29D73130005D018E /* confetti.riv in Resources */ = {isa = PBXBuildFile; fileRef = 4846CFF629D73130005D018E /* confetti.riv */; };
+		4846D00029D73130005D018E /* confetti.riv in Resources */ = {isa = PBXBuildFile; fileRef = 4846CFF629D73130005D018E /* confetti.riv */; };
+		4846D00129D73130005D018E /* confetti.riv in Resources */ = {isa = PBXBuildFile; fileRef = 4846CFF629D73130005D018E /* confetti.riv */; };
+		4846D00229D73130005D018E /* check.riv in Resources */ = {isa = PBXBuildFile; fileRef = 4846CFF729D73130005D018E /* check.riv */; };
+		4846D00329D73130005D018E /* check.riv in Resources */ = {isa = PBXBuildFile; fileRef = 4846CFF729D73130005D018E /* check.riv */; };
+		4846D00429D73130005D018E /* check.riv in Resources */ = {isa = PBXBuildFile; fileRef = 4846CFF729D73130005D018E /* check.riv */; };
+		4846D00529D73130005D018E /* menu_button.riv in Resources */ = {isa = PBXBuildFile; fileRef = 4846CFF829D73130005D018E /* menu_button.riv */; };
+		4846D00629D73130005D018E /* menu_button.riv in Resources */ = {isa = PBXBuildFile; fileRef = 4846CFF829D73130005D018E /* menu_button.riv */; };
+		4846D00729D73130005D018E /* menu_button.riv in Resources */ = {isa = PBXBuildFile; fileRef = 4846CFF829D73130005D018E /* menu_button.riv */; };
+		4846D00829D73130005D018E /* shapes.riv in Resources */ = {isa = PBXBuildFile; fileRef = 4846CFF929D73130005D018E /* shapes.riv */; };
+		4846D00929D73130005D018E /* shapes.riv in Resources */ = {isa = PBXBuildFile; fileRef = 4846CFF929D73130005D018E /* shapes.riv */; };
+		4846D00A29D73130005D018E /* shapes.riv in Resources */ = {isa = PBXBuildFile; fileRef = 4846CFF929D73130005D018E /* shapes.riv */; };
+		4846D00B29D73130005D018E /* button.riv in Resources */ = {isa = PBXBuildFile; fileRef = 4846CFFA29D73130005D018E /* button.riv */; };
+		4846D00C29D73130005D018E /* button.riv in Resources */ = {isa = PBXBuildFile; fileRef = 4846CFFA29D73130005D018E /* button.riv */; };
+		4846D00D29D73130005D018E /* button.riv in Resources */ = {isa = PBXBuildFile; fileRef = 4846CFFA29D73130005D018E /* button.riv */; };
+		4846D00E29D73130005D018E /* icons.riv in Resources */ = {isa = PBXBuildFile; fileRef = 4846CFFB29D73130005D018E /* icons.riv */; };
+		4846D00F29D73130005D018E /* icons.riv in Resources */ = {isa = PBXBuildFile; fileRef = 4846CFFB29D73130005D018E /* icons.riv */; };
+		4846D01029D73130005D018E /* icons.riv in Resources */ = {isa = PBXBuildFile; fileRef = 4846CFFB29D73130005D018E /* icons.riv */; };
 		488340B029B80B1500910A27 /* AppsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488340AF29B80B1500910A27 /* AppsView.swift */; };
 		488340B229B80B5100910A27 /* ConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488340B129B80B5100910A27 /* ConfigView.swift */; };
 		488340B429B80CE800910A27 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488340B329B80CE800910A27 /* TabBar.swift */; };
@@ -122,6 +148,17 @@
 		4846CFDA29D1E94F005D018E /* DeviceActivityMonitorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceActivityMonitorExtension.swift; sourceTree = "<group>"; };
 		4846CFDC29D1E94F005D018E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4846CFDD29D1E94F005D018E /* DeviceActivityMonitor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DeviceActivityMonitor.entitlements; sourceTree = "<group>"; };
+		4846CFE429D313B1005D018E /* TotalCategoryReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalCategoryReport.swift; sourceTree = "<group>"; };
+		4846CFE629D313FA005D018E /* CategoryChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryChartView.swift; sourceTree = "<group>"; };
+		4846CFE829D32208005D018E /* ExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleView.swift; sourceTree = "<group>"; };
+		4846CFEE29D49A1E005D018E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		4846CFF529D73130005D018E /* house.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = house.riv; sourceTree = "<group>"; };
+		4846CFF629D73130005D018E /* confetti.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = confetti.riv; sourceTree = "<group>"; };
+		4846CFF729D73130005D018E /* check.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = check.riv; sourceTree = "<group>"; };
+		4846CFF829D73130005D018E /* menu_button.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = menu_button.riv; sourceTree = "<group>"; };
+		4846CFF929D73130005D018E /* shapes.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = shapes.riv; sourceTree = "<group>"; };
+		4846CFFA29D73130005D018E /* button.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = button.riv; sourceTree = "<group>"; };
+		4846CFFB29D73130005D018E /* icons.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = icons.riv; sourceTree = "<group>"; };
 		488340AF29B80B1500910A27 /* AppsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsView.swift; sourceTree = "<group>"; };
 		488340B129B80B5100910A27 /* ConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigView.swift; sourceTree = "<group>"; };
 		488340B329B80CE800910A27 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
@@ -138,6 +175,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4846CFF329D72FED005D018E /* RiveRuntime in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +244,7 @@
 				481388F029ABE0F2001B8A55 /* ScreenBreakApp.swift */,
 				488340AE29B80AA800910A27 /* Views */,
 				481388F429ABE0F6001B8A55 /* Assets.xcassets */,
+				4846CFF429D73130005D018E /* RiveAssets */,
 				481388F929ABE0F6001B8A55 /* Persistence.swift */,
 				4846CFCF29D1E888005D018E /* MyModel.swift */,
 				4846CFD129D1E8E0005D018E /* MySchedule.swift */,
@@ -254,8 +293,12 @@
 			children = (
 				4846CFBC29D1039E005D018E /* ReportExtension.swift */,
 				4846CFBE29D1039E005D018E /* TotalActivityReport.swift */,
+				4846CFEE29D49A1E005D018E /* CardView.swift */,
 				4846CFC029D1039E005D018E /* TotalActivityView.swift */,
 				4846CFCB29D105A1005D018E /* AppDeviceActivity.swift */,
+				4846CFE429D313B1005D018E /* TotalCategoryReport.swift */,
+				4846CFE629D313FA005D018E /* CategoryChartView.swift */,
+				4846CFE829D32208005D018E /* ExampleView.swift */,
 				4846CFC229D1039E005D018E /* Info.plist */,
 				4846CFC329D1039E005D018E /* ReportExtension.entitlements */,
 			);
@@ -270,6 +313,20 @@
 				4846CFDD29D1E94F005D018E /* DeviceActivityMonitor.entitlements */,
 			);
 			path = DeviceActivityMonitor;
+			sourceTree = "<group>";
+		};
+		4846CFF429D73130005D018E /* RiveAssets */ = {
+			isa = PBXGroup;
+			children = (
+				4846CFF529D73130005D018E /* house.riv */,
+				4846CFF629D73130005D018E /* confetti.riv */,
+				4846CFF729D73130005D018E /* check.riv */,
+				4846CFF829D73130005D018E /* menu_button.riv */,
+				4846CFF929D73130005D018E /* shapes.riv */,
+				4846CFFA29D73130005D018E /* button.riv */,
+				4846CFFB29D73130005D018E /* icons.riv */,
+			);
+			path = RiveAssets;
 			sourceTree = "<group>";
 		};
 		488340AE29B80AA800910A27 /* Views */ = {
@@ -308,6 +365,9 @@
 				4846CFDF29D1E94F005D018E /* PBXTargetDependency */,
 			);
 			name = ScreenBreak;
+			packageProductDependencies = (
+				4846CFF229D72FED005D018E /* RiveRuntime */,
+			);
 			productName = ScreenBreak;
 			productReference = 481388ED29ABE0F2001B8A55 /* ScreenBreak.app */;
 			productType = "com.apple.product-type.application";
@@ -420,6 +480,9 @@
 				Base,
 			);
 			mainGroup = 481388E429ABE0F1001B8A55;
+			packageReferences = (
+				4846CFF129D72FED005D018E /* XCRemoteSwiftPackageReference "rive-ios" */,
+			);
 			productRefGroup = 481388EE29ABE0F2001B8A55 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -438,8 +501,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4846D00829D73130005D018E /* shapes.riv in Resources */,
+				4846D00229D73130005D018E /* check.riv in Resources */,
 				481388F829ABE0F6001B8A55 /* Preview Assets.xcassets in Resources */,
+				4846D00529D73130005D018E /* menu_button.riv in Resources */,
+				4846CFFC29D73130005D018E /* house.riv in Resources */,
+				4846D00B29D73130005D018E /* button.riv in Resources */,
 				481388F529ABE0F6001B8A55 /* Assets.xcassets in Resources */,
+				4846CFFF29D73130005D018E /* confetti.riv in Resources */,
+				4846D00E29D73130005D018E /* icons.riv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +531,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4846D00929D73130005D018E /* shapes.riv in Resources */,
+				4846D00329D73130005D018E /* check.riv in Resources */,
+				4846D00F29D73130005D018E /* icons.riv in Resources */,
+				4846CFFD29D73130005D018E /* house.riv in Resources */,
+				4846D00C29D73130005D018E /* button.riv in Resources */,
+				4846D00629D73130005D018E /* menu_button.riv in Resources */,
+				4846D00029D73130005D018E /* confetti.riv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +545,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4846D00A29D73130005D018E /* shapes.riv in Resources */,
+				4846D00429D73130005D018E /* check.riv in Resources */,
+				4846D01029D73130005D018E /* icons.riv in Resources */,
+				4846CFFE29D73130005D018E /* house.riv in Resources */,
+				4846D00D29D73130005D018E /* button.riv in Resources */,
+				4846D00729D73130005D018E /* menu_button.riv in Resources */,
+				4846D00129D73130005D018E /* confetti.riv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,7 +604,11 @@
 				4846CFCC29D105A1005D018E /* AppDeviceActivity.swift in Sources */,
 				4846CFC129D1039E005D018E /* TotalActivityView.swift in Sources */,
 				4846CFBD29D1039E005D018E /* ReportExtension.swift in Sources */,
+				4846CFE729D313FA005D018E /* CategoryChartView.swift in Sources */,
 				4846CFBF29D1039E005D018E /* TotalActivityReport.swift in Sources */,
+				4846CFE929D32208005D018E /* ExampleView.swift in Sources */,
+				4846CFF029D49A48005D018E /* CardView.swift in Sources */,
+				4846CFE529D313B1005D018E /* TotalCategoryReport.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -679,6 +767,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ScreenBreak/ScreenBreak.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ScreenBreak/Preview Content\"";
@@ -686,10 +775,10 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ScreenBreak/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Screen Break";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -697,9 +786,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ChristianPichardo.ScreenBreak;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -710,6 +803,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ScreenBreak/ScreenBreak.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ScreenBreak/Preview Content\"";
@@ -717,10 +811,10 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ScreenBreak/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Screen Break";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -728,9 +822,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ChristianPichardo.ScreenBreak;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -980,6 +1078,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4846CFF129D72FED005D018E /* XCRemoteSwiftPackageReference "rive-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rive-app/rive-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4846CFF229D72FED005D018E /* RiveRuntime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4846CFF129D72FED005D018E /* XCRemoteSwiftPackageReference "rive-ios" */;
+			productName = RiveRuntime;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		481388FB29ABE0F6001B8A55 /* ScreenBreak.xcdatamodeld */ = {

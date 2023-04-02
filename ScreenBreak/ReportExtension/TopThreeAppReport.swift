@@ -1,33 +1,24 @@
 //
-//  TotalActivityReport.swift
-//  ReportExtension
+//  TopThreeAppReport.swift
+//  ScreenBreak
 //
-//  Created by Christian Pichardo on 3/26/23.
+//  Created by Christian Pichardo on 3/31/23.
 //
 
+import Foundation
 import DeviceActivity
 import SwiftUI
+import FamilyControls
 
-extension DeviceActivityReport.Context {
-    // If your app initializes a DeviceActivityReport with this context, then the system will use
-    // your extension's corresponding DeviceActivityReportScene to render the contents of the
-    // report.
-    static let totalActivity = Self("Total Activity")
-    static let totalCategory = Self("Total Category")
-    static let topThree = Self("Top Three Apps")
-    static let barGraph = Self("Bar Graph")
-    static let pieChart = Self("Pie Chart")
-}
-
-struct TotalActivityReport: DeviceActivityReportScene {
-    
+struct TopThreeAppReport: DeviceActivityReportScene {
+  
     // Define which context your scene will represent.
-    let context: DeviceActivityReport.Context = .totalActivity
+    let context: DeviceActivityReport.Context = .topThree
     
     // Define the custom configuration and the resulting view for this report.
-    let content: (ActivityReport) -> TotalActivityView
+    let content: (TopThreeReport) -> TopThreeView
     
-    func makeConfiguration(representing data: DeviceActivityResults<DeviceActivityData>) async -> ActivityReport {
+    func makeConfiguration(representing data: DeviceActivityResults<DeviceActivityData>) async -> TopThreeReport {
         // Reformat the data into a configuration that can be used to create
         // the report's view.
         var res = ""
@@ -93,7 +84,7 @@ struct TotalActivityReport: DeviceActivityReportScene {
             }
         }
         
-        return ActivityReport(totalDuration: totalActivityDuration,totalPickupsWithoutApplicationActivity: totalPickups, longestActivity: longestActivity, firstPickup: firstPickup, categories: categories, apps: list)
+        return TopThreeReport(apps:list)
     }
 }
 
