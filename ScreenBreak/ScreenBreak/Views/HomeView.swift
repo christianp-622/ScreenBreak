@@ -6,14 +6,14 @@
 //
 
 import SwiftUI
+import RiveRuntime
 
 struct HomeView: View {
+    
     var body: some View {
         NavigationView {
             VStack{
-                //totalTime()
-                topApps()
-                biggestLosers()
+                
                 Button("Set Time Limits"){
                     print("hello world")
                 }.buttonStyle(.bordered)
@@ -26,8 +26,8 @@ struct HomeView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 70, height: 70)
+                .padding()
                 )
-             
         }
         .navigationViewStyle(.stack)
     }

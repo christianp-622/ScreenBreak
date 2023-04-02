@@ -16,5 +16,14 @@ struct ReportExtension: DeviceActivityReportExtension {
             TotalActivityView(activityReport: totalActivity)
         }
         // Add more reports here...
+        TotalCategoryReport {categoryReport in
+            CategoryChartView(categoryReport: categoryReport)
+        }
+        
+        
+        
+        
+        
+        
     }
 }

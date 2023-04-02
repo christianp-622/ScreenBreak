@@ -13,6 +13,10 @@ extension DeviceActivityReport.Context {
     // your extension's corresponding DeviceActivityReportScene to render the contents of the
     // report.
     static let totalActivity = Self("Total Activity")
+    static let totalCategory = Self("Total Category")
+    static let topThree = Self("Top Three Apps")
+    static let barGraph = Self("Bar Graph")
+    static let pieChart = Self("Pie Chart")
 }
 
 struct TotalActivityReport: DeviceActivityReportScene {
@@ -35,7 +39,7 @@ struct TotalActivityReport: DeviceActivityReportScene {
         var longestActivity:DateInterval?
         var firstPickup:Date?
         var categories:[String] = []
-        print("HEREREERERERE")
+       
         
         for await d in data {
             res += d.user.appleID!.debugDescription
@@ -50,10 +54,12 @@ struct TotalActivityReport: DeviceActivityReportScene {
                 for await c in a.categories {
                     categories.append((c.category.localizedDisplayName)!)
                     for await ap in c.applications {
+                        
                         let appName = (ap.application.localizedDisplayName ?? "nil")
                         let bundle = (ap.application.bundleIdentifier ?? "nil")
                         let duration = Int(ap.totalActivityDuration)
                         let category = c.category.localizedDisplayName!
+                        let token = ap.application.token!
                         
                         let numberOfHours = duration / 3600
                         let numberOfMins = (duration % 3600) / 60
@@ -80,7 +86,7 @@ struct TotalActivityReport: DeviceActivityReportScene {
                        
                         let numberOfPickups = ap.numberOfPickups
                         let notifs = ap.numberOfNotifications
-                        let app = AppDeviceActivity(id: bundle, displayName: appName, duration: formatedDuration, numberOfPickups: numberOfPickups,category: category, numberOfNotifs: notifs)
+                        let app = AppDeviceActivity(id: bundle, token: token, displayName: appName, duration: formatedDuration, numberOfPickups: numberOfPickups,category: category, numberOfNotifs: notifs)
                         list.append(app)
                     }
                 }

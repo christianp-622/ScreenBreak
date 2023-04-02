@@ -6,13 +6,22 @@
 //
 
 import SwiftUI
+import RiveRuntime
 
 struct SettingsView: View {
     var body: some View {
         NavigationView {
-            Text("Settings")
-                .navigationTitle("Settings")
-            
+            ZStack{
+                RiveViewModel(fileName: "shapes").view()
+                    .ignoresSafeArea()
+                    .blur(radius:30)
+                    .background(
+                        Image("Spline")
+                            .blur(radius:60)
+                            .offset(x:200, y:100)
+                    )
+                Text("Settings")
+            }.navigationTitle("Settings")
         }
         .navigationViewStyle(.stack)
     }

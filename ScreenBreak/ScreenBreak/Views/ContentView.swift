@@ -8,24 +8,39 @@
 import SwiftUI
 import CoreData
 import FamilyControls
+import RiveRuntime
+
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
+    @AppStorage("selectedTab") var selectedTab: Tab = .home
     @EnvironmentObject var launchScreenManager: LaunchScreenManager
 
 
     var body: some View {
-        TabBar()
-            .onAppear{
-                DispatchQueue
-                    .main
-                    .asyncAfter(deadline:.now() + 5){
-                        launchScreenManager.dismiss()
-                    }
+        ZStack{
+            switch selectedTab{
+            case .home:
+                HomeView()
+            case .search:
+                AppsView()
+            case .timer:
+                ConfigView()
+            case .settings:
+                LeaderboardView()
+            case .user:
+                SettingsView()
             }
             
+            TabBar()
+        }.onAppear{
+            DispatchQueue
+                .main
+                .asyncAfter(deadline:.now() + 5){
+                    launchScreenManager.dismiss()
+                }
+        }
     }
-
 }
 
 
