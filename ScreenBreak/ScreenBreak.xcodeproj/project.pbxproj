@@ -68,6 +68,7 @@
 		DD69DAC029D212560024831D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD69DABD29D212560024831D /* LoginView.swift */; };
 		DD69DAC129D212560024831D /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD69DABE29D212560024831D /* SignInView.swift */; };
 		DD69DAC229D212560024831D /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD69DABF29D212560024831D /* RegisterView.swift */; };
+		DDEEB70E29DB4560006FC9E5 /* CreateProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEEB70D29DB4560006FC9E5 /* CreateProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -181,6 +182,7 @@
 		DD69DABD29D212560024831D /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		DD69DABE29D212560024831D /* SignInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		DD69DABF29D212560024831D /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		DDEEB70D29DB4560006FC9E5 /* CreateProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -350,6 +352,7 @@
 			isa = PBXGroup;
 			children = (
 				481388F229ABE0F2001B8A55 /* ContentView.swift */,
+				DDEEB70D29DB4560006FC9E5 /* CreateProfileView.swift */,
 				488340BB29C8A80B00910A27 /* LaunchScreenView.swift */,
 				488340B329B80CE800910A27 /* TabBar.swift */,
 				DD69DABF29D212560024831D /* RegisterView.swift */,
@@ -601,6 +604,7 @@
 				DD69DAC129D212560024831D /* SignInView.swift in Sources */,
 				481388F129ABE0F2001B8A55 /* ScreenBreakApp.swift in Sources */,
 				488340BF29C8AE8F00910A27 /* LaunchScreenManager.swift in Sources */,
+				DDEEB70E29DB4560006FC9E5 /* CreateProfileView.swift in Sources */,
 				DD69DAC029D212560024831D /* LoginView.swift in Sources */,
 				488340B429B80CE800910A27 /* TabBar.swift in Sources */,
 			);
