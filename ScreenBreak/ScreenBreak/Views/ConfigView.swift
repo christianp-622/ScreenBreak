@@ -7,6 +7,7 @@
 
 import SwiftUI
 import RiveRuntime
+import FamilyControls
 
 struct ConfigView: View {
     @State private var isDiscouragedPresented = false
@@ -34,7 +35,9 @@ struct ConfigView: View {
                     )
                     .onTapGesture{
                         try? button.play(animationName:"active")
-                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                            familyActivityPicker(isPresented: $isDiscouragedPresented, selection: $model.selectionToDiscourage)
+                        }
                         isDiscouragedPresented = true
                     }
                     
@@ -44,10 +47,6 @@ struct ConfigView: View {
                 }
                 .familyActivityPicker(isPresented: $isDiscouragedPresented, selection: $model.selectionToDiscourage)
                 
-                Button("Select Apps to Encourage") {
-                    isEncouragedPresented = true
-                }
-                .familyActivityPicker(isPresented: $isEncouragedPresented, selection: $model.selectionToEncourage)
             }
             .onChange(of: model.selectionToDiscourage) { newSelection in
                 MyModel.shared.setShieldRestrictions()}

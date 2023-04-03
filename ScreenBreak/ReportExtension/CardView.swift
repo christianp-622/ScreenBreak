@@ -20,6 +20,7 @@ struct CardView: View {
                 .fill(.clear)
                 .shadow(radius: 10)
                 .shadow(radius: 10)
+            
             VStack {
                 Label(app.token)
                     .labelStyle(.iconOnly)
@@ -37,6 +38,8 @@ struct CardView: View {
             .multilineTextAlignment(.center)
         }
         .frame(width: 100, height:100)
+        .shadow(color:.accentColor.opacity(0.2), radius:2, x:3, y:5)
+        
         .padding()
         .onTapGesture{
             showInfo.toggle()

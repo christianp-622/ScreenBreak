@@ -7,6 +7,7 @@
 
 import SwiftUI
 import DeviceActivity
+import RiveRuntime
 
 
 struct ChartView: View {
@@ -24,9 +25,8 @@ struct ChartView: View {
     )
 
     var body: some View {
-        ZStack {
-            DeviceActivityReport(context, filter: filter)
-        }
+        DeviceActivityReport(context, filter: filter)
+        
     }
 }
 

@@ -11,9 +11,8 @@ import DeviceActivity
 
 struct HomeView: View {
     
-    @State private var context: DeviceActivityReport.Context = .init(rawValue: "Top Three Apps")
+    @State private var topThreecontext: DeviceActivityReport.Context = .init(rawValue: "Top Three Apps")
     @State private var categoryContext: DeviceActivityReport.Context = .init(rawValue: "Total Category")
-    //@State private var context: DeviceActivityReport.Context = .init(rawValue: "Total Category")
     @State private var filter = DeviceActivityFilter(
         segment: .daily(
             during: Calendar.current.dateInterval(
@@ -23,12 +22,44 @@ struct HomeView: View {
         users: .all,
         devices: .init([.iPhone, .iPad])
     )
+    
+    @EnvironmentObject var model: MyModel
+    let button = RiveViewModel(fileName: "button")
+    @State private var isDiscouragedPresented = false
 
     var body: some View {
         VStack {
-            DeviceActivityReport(context, filter: filter)
             DeviceActivityReport(categoryContext, filter: filter)
-        }
+            DeviceActivityReport(topThreecontext, filter: filter)
+            button.view()
+                .frame(width: 236, height:64)
+                .overlay(
+                    Label("Select Apps to Lock", systemImage:"arrow.forward")
+                        .offset(x:4, y: 4)
+                        .font(.headline)
+                )
+                .background(
+                    Color.black
+                        .cornerRadius(30)
+                        .blur(radius:10)
+                        .opacity(0.3)
+                        .offset(y:10)
+                )
+                .onTapGesture{
+                    try? button.play(animationName:"active")
+                    
+                    isDiscouragedPresented = true
+                }
+                .familyActivityPicker(isPresented: $isDiscouragedPresented, selection: $model.selectionToDiscourage)
+            
+            Spacer(minLength: 80)
+            
+        }.onChange(of: model.selectionToDiscourage) { newSelection in
+            MyModel.shared.setShieldRestrictions()}
+    }
+    
+    var topApps: some View{
+        Text("")
     }
     
     /*var body: some View {
