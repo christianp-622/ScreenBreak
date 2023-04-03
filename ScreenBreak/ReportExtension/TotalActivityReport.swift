@@ -58,6 +58,7 @@ struct TotalActivityReport: DeviceActivityReportScene {
                         let appName = (ap.application.localizedDisplayName ?? "nil")
                         let bundle = (ap.application.bundleIdentifier ?? "nil")
                         let duration = Int(ap.totalActivityDuration)
+                        let durationInterval = ap.totalActivityDuration
                         let category = c.category.localizedDisplayName!
                         let token = ap.application.token!
                         
@@ -86,7 +87,7 @@ struct TotalActivityReport: DeviceActivityReportScene {
                        
                         let numberOfPickups = ap.numberOfPickups
                         let notifs = ap.numberOfNotifications
-                        let app = AppDeviceActivity(id: bundle, token: token, displayName: appName, duration: formatedDuration, numberOfPickups: numberOfPickups,category: category, numberOfNotifs: notifs)
+                        let app = AppDeviceActivity(id: bundle, token: token, displayName: appName, duration: formatedDuration, durationInterval: durationInterval, numberOfPickups: numberOfPickups,category: category, numberOfNotifs: notifs)
                         list.append(app)
                     }
                 }

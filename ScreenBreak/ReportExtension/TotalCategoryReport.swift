@@ -26,7 +26,7 @@ struct TotalCategoryReport: DeviceActivityReportScene {
                     let category = c.category
                     let hash = c.hashValue
                     let duration = c.totalActivityDuration
-                    let categoryActivity = CategoryDeviceActivity(id: hash, category: category.localizedDisplayName!, duration: duration)
+                    let categoryActivity = CategoryDeviceActivity(id: hash, category: category.localizedDisplayName!, duration: duration, token: category.token!)
                     list.append(categoryActivity)
                 }
             }

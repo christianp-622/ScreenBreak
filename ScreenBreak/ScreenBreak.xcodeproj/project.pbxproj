@@ -61,6 +61,8 @@
 		488340BA29B8198D00910A27 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488340B929B8198D00910A27 /* HomeView.swift */; };
 		488340BC29C8A80B00910A27 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488340BB29C8A80B00910A27 /* LaunchScreenView.swift */; };
 		488340BF29C8AE8F00910A27 /* LaunchScreenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488340BE29C8AE8F00910A27 /* LaunchScreenManager.swift */; };
+		48AE99F429DA4C330092766C /* TopAppsReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE99F329DA4C330092766C /* TopAppsReport.swift */; };
+		48AE99F629DA4CB10092766C /* TopThreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE99F529DA4CB10092766C /* TopThreeView.swift */; };
 		DD69DAAB29D20C850024831D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD69DAAA29D20C850024831D /* GoogleService-Info.plist */; };
 		DD69DAAE29D20D290024831D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = DD69DAAD29D20D290024831D /* FirebaseAuth */; };
 		DD69DAC029D212560024831D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD69DABD29D212560024831D /* LoginView.swift */; };
@@ -173,6 +175,8 @@
 		488340BB29C8A80B00910A27 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		488340BD29C8AA8800910A27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		488340BE29C8AE8F00910A27 /* LaunchScreenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenManager.swift; sourceTree = "<group>"; };
+		48AE99F329DA4C330092766C /* TopAppsReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopAppsReport.swift; sourceTree = "<group>"; };
+		48AE99F529DA4CB10092766C /* TopThreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopThreeView.swift; sourceTree = "<group>"; };
 		DD69DAAA29D20C850024831D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DD69DABD29D212560024831D /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		DD69DABE29D212560024831D /* SignInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
@@ -304,6 +308,8 @@
 			children = (
 				4846CFBC29D1039E005D018E /* ReportExtension.swift */,
 				4846CFBE29D1039E005D018E /* TotalActivityReport.swift */,
+				48AE99F329DA4C330092766C /* TopAppsReport.swift */,
+				48AE99F529DA4CB10092766C /* TopThreeView.swift */,
 				4846CFEE29D49A1E005D018E /* CardView.swift */,
 				4846CFC029D1039E005D018E /* TotalActivityView.swift */,
 				4846CFCB29D105A1005D018E /* AppDeviceActivity.swift */,
@@ -625,6 +631,8 @@
 				4846CFC129D1039E005D018E /* TotalActivityView.swift in Sources */,
 				4846CFBD29D1039E005D018E /* ReportExtension.swift in Sources */,
 				4846CFE729D313FA005D018E /* CategoryChartView.swift in Sources */,
+				48AE99F429DA4C330092766C /* TopAppsReport.swift in Sources */,
+				48AE99F629DA4CB10092766C /* TopThreeView.swift in Sources */,
 				4846CFBF29D1039E005D018E /* TotalActivityReport.swift in Sources */,
 				4846CFE929D32208005D018E /* ExampleView.swift in Sources */,
 				4846CFF029D49A48005D018E /* CardView.swift in Sources */,
@@ -861,7 +869,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9X5NJM66A3;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ChristianPichardo.ScreenBreakTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -881,7 +889,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9X5NJM66A3;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ChristianPichardo.ScreenBreakTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1100,6 +1108,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4846CFF129D72FED005D018E /* XCRemoteSwiftPackageReference "rive-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rive-app/rive-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		DD69DAAC29D20D290024831D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -1108,27 +1124,19 @@
 				kind = branch;
 			};
 		};
-        4846CFF129D72FED005D018E /* XCRemoteSwiftPackageReference "rive-ios" */ = {
-            isa = XCRemoteSwiftPackageReference;
-            repositoryURL = "https://github.com/rive-app/rive-ios";
-            requirement = {
-                kind = upToNextMajorVersion;
-                minimumVersion = 3.0.0;
-            };
-        };
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4846CFF229D72FED005D018E /* RiveRuntime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4846CFF129D72FED005D018E /* XCRemoteSwiftPackageReference "rive-ios" */;
+			productName = RiveRuntime;
+		};
 		DD69DAAD29D20D290024831D /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DD69DAAC29D20D290024831D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
 		};
-        4846CFF229D72FED005D018E /* RiveRuntime */ = {
-            isa = XCSwiftPackageProductDependency;
-            package = 4846CFF129D72FED005D018E /* XCRemoteSwiftPackageReference "rive-ios" */;
-            productName = RiveRuntime;
-        };
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */

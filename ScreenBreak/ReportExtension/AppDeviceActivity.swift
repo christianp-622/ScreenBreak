@@ -28,6 +28,7 @@ struct AppDeviceActivity: Identifiable {
     var token: ApplicationToken
     var displayName: String
     var duration: String
+    var durationInterval: TimeInterval
     var numberOfPickups: Int
     var category: String
     var numberOfNotifs: Int
@@ -42,6 +43,7 @@ struct CategoryDeviceActivity: Identifiable {
     var id:Int
     var category:String
     var duration: TimeInterval
+    var token: ActivityCategoryToken
 }
 
 

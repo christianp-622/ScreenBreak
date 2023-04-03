@@ -20,6 +20,10 @@ struct ReportExtension: DeviceActivityReportExtension {
             CategoryChartView(categoryReport: categoryReport)
         }
         
+        TopAppsReport {topThreeReport in
+            TopThreeView(topThreeReport: topThreeReport)
+        }
+        
         
         
         

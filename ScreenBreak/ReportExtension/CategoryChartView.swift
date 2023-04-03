@@ -20,8 +20,8 @@ struct CategoryChartView: View {
                 Chart(categoryReport.categories) { categoryActivity in
                     // 1. Swap the X and Y values
                     BarMark(
-                        x: .value("Time Spent", categoryActivity.duration),
-                        y: .value("Category", categoryActivity.category)
+                        x: .value("Category", categoryActivity.category),
+                        y: .value("Time Spent", categoryActivity.duration)
                     ).cornerRadius(20)
                         .annotation(position: .trailing) {
                             Text(categoryActivity.duration.stringFromTimeInterval())
@@ -32,9 +32,8 @@ struct CategoryChartView: View {
                             endPoint: .trailing)
                         )
 
-                }.frame(height: 800)
+                }.frame(height: 400)
                 // 1. Functions for modifying axis labels
-                .chartYAxisLabel("Category")
                 .padding()
             }.padding()
         }

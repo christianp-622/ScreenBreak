@@ -7,13 +7,6 @@
 
 import SwiftUI
 
-struct TopThreeView: View {
-    var activityReport: ActivityReport
-    
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
 
 struct TotalActivityView: View {
     var activityReport: ActivityReport
