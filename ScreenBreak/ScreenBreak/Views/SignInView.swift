@@ -6,43 +6,75 @@
 //
 
 import SwiftUI
+import FirebaseAuth
+import RiveRuntime
 
 struct SignInView: View {
     
-    @State private var selection: String? = nil
+    @State var phoneNumber = ""
+    @State var verificationCode = ""
+    @State var verificationID: String?
+    @State var showErrorAlert = false
+    @State var errorMessage = ""
     
     var body: some View {
-        NavigationView {
-            VStack {
-                NavigationLink(destination: LoginView()){ Text("Login")
-                        .frame(maxWidth: .infinity)
+        VStack {
+            TextField("Phone Number", text: $phoneNumber)
+                .padding()
+                .background(Color.gray.opacity(0.2))
+                .cornerRadius(5)
+                .padding(.horizontal)
+            
+            Button(action: {
+                PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate: nil) { (verificationID, error) in
+                    if let error = error {
+                        showErrorAlert = true
+                        errorMessage = error.localizedDescription
+                        return
+                    }
+                    self.verificationID = verificationID
                 }
-                .buttonStyle(.bordered)
-                .buttonBorderShape(.capsule)
-                
-                NavigationLink(destination: RegisterView()){
-                    Text("Register an Account")
-                        .frame(maxWidth: .infinity)
-                }
-                .buttonStyle(.bordered)
-                .buttonBorderShape(.capsule)
-                
-                NavigationLink(destination: ContentView() .navigationBarBackButtonHidden(true))
-                {
-                    Text("SKIP (DELETE WHEN DEPLOYED)")
-                        .frame(maxWidth: .infinity)
-                }
-                .buttonStyle(.bordered)
-                .buttonBorderShape(.capsule)
-                
+            }) {
+                Text("Send Verification Code")
+                    .foregroundColor(.white)
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(Color.blue)
+                    .cornerRadius(5)
+                    .padding(.horizontal)
+                    //.buttonBorderShape(capsule)
             }
-            .padding()
-            .cornerRadius(10)
-            .shadow(radius: 10)
-            .padding()
-            .navigationTitle("Sign In")
+            
+            TextField("Verification Code", text: $verificationCode)
+                .padding()
+                .background(Color.gray.opacity(0.2))
+                .cornerRadius(5)
+                .padding(.horizontal)
+            
+            Button(action: {
+                guard let verificationID = verificationID else { return }
+                let credential = PhoneAuthProvider.provider().credential(withVerificationID: verificationID, verificationCode: verificationCode)
+                Auth.auth().signIn(with: credential) { (authResult, error) in
+                    if let error = error {
+                        showErrorAlert = true
+                        errorMessage = error.localizedDescription
+                        return
+                    }
+                    // Sign in successful
+                }
+            }) {
+                Text("Sign In")
+                    .foregroundColor(.white)
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(Color.blue)
+                    .cornerRadius(5)
+                    .padding(.horizontal)
+            }
         }
-        
+        .alert(isPresented: $showErrorAlert) {
+            Alert(title: Text("Error"), message: Text(errorMessage), dismissButton: .default(Text("OK")))
+        }
     }
 }
 

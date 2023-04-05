@@ -40,14 +40,14 @@ struct LoginView: View {
             .shadow(radius: 10)
             .padding()
             .navigationTitle("Login")
-            .navigationBarItems(trailing: NavigationLink(
-                destination: ContentView().navigationBarBackButtonHidden(true),
-                isActive: $isLoggedIn,
-                label: {
-                    EmptyView()
-                }
-                
-            ))
+//            .navigationBarItems(trailing: NavigationLink(
+//                destination: ContentView().navigationBarBackButtonHidden(true),
+//                isActive: $isLoggedIn,
+//                label: {
+//                    EmptyView()
+//                }
+//
+//            ))
     }
 }
 
