@@ -11,35 +11,42 @@ struct TopThreeView: View {
     var topThreeReport: TopThreeReport
     private let adaptiveColumns = [GridItem(.adaptive(minimum:50))]
     private let fixedColumns =  [GridItem(.fixed(100)), GridItem(.fixed(100)), GridItem(.fixed(100))]
-    let colors = [Color.pink, .indigo, .pink, .mint, .purple, .yellow, .mint]
+    let colors = [Color.cyan, .indigo, .pink, .purple, .yellow, .teal]
     
     var body: some View {
         HStack{
             Spacer()
-            card
+            ZStack{
+                AngularGradient(colors: colors, center: .topLeading, angle:.degrees(180))
+                LinearGradient(gradient: Gradient(colors:[Color.white.opacity(0.3), Color.white.opacity(0.8)]), startPoint:.top, endPoint: .trailing)
+                card
+            }
             Spacer()
         }
+        .frame(width: UIScreen.main.bounds.width * 0.9, height:200)
+        .mask(RoundedRectangle(cornerRadius:40, style:.continuous))
+        .overlay(RoundedRectangle(cornerRadius:40, style:.continuous).stroke(.black, lineWidth: 2))
+        .shadow(radius: 5)
+        .padding(30)
     }
     
     var card: some View{
-        
         VStack(alignment:.center){
+            Spacer()
             Text("Top Apps")
-                .font(.system(size: 36))
-                .font(.headline)
-               
-            LazyVGrid(columns:fixedColumns, spacing:10){
+                .customFont(.title)
+            Rectangle()
+                .fill(.black)
+                .frame(width:100, height: 3)
+                .edgesIgnoringSafeArea(.horizontal)
+            
+            LazyVGrid(columns:fixedColumns, spacing:5){
                 ForEach(topThreeReport.apps){ app in
-                    CardView(app:app)
+                    CardView(app:app, disablePopover: true)
                 }
             }
         }
         .padding(30)
-        .background(AngularGradient(colors: colors, center: .topLeading)
-        .edgesIgnoringSafeArea(.all))
-        //.background(.linearGradient(colors:[.mint, .mint.opacity(0.2)], startPoint:.topLeading, endPoint:.bottomTrailing))
-        .mask(RoundedRectangle(cornerRadius:40, style:.continuous))
-        .shadow(color:.accentColor.opacity(0.3), radius:2, x:1, y:8)
-        .shadow(color:.accentColor.opacity(0.3), radius:2, x:0, y:1)
+        
     }
 }

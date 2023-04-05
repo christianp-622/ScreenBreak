@@ -9,6 +9,15 @@ import SwiftUI
 import RiveRuntime
 
 struct SettingsView: View {
+    
+    init() {
+            //Use this if NavigationBarTitle is with Large Font
+            UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "Poppins-Bold", size: 40)!]
+
+            //Use this if NavigationBarTitle is with displayMode = .inline
+            //UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "Georgia-Bold", size: 20)!]
+        }
+    
     var body: some View {
         NavigationView {
             ZStack{

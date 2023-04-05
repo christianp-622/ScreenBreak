@@ -10,24 +10,31 @@ import SwiftUI
 
 struct TotalActivityView: View {
     var activityReport: ActivityReport
+    private var adaptiveColumns = [GridItem(.adaptive(minimum:100))]
+    @State var delay = 0.1
     
-    private let adaptiveColumns = [GridItem(.adaptive(minimum:100))]
-    private let numberColumns = [GridItem(.flexible()), GridItem(.flexible())]
-    private let fixedColumns =  [GridItem(.fixed(200)), GridItem(.fixed(200))]
+    
+    init(activityReport: ActivityReport) {
+        self.activityReport = activityReport
+        UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "Poppins-Bold", size: 40)!]
+        }
     
     var body: some View {
         NavigationView{
             ScrollView{
                 LazyVGrid(columns:adaptiveColumns, spacing:10){
-                    ForEach(activityReport.apps){ app in
-                        CardView(app:app)
+                    ForEach(Array(activityReport.apps.enumerated()), id: \.offset) { index, app in
+                        CardView(app: app, disablePopover:false)
+                            //.animation(Animation.easeIn(duration:0.3).delay(Double(index)*0.1 + 0.2))
+                           // .animation(Animation.easeIn(duration:0.3))
                     }
                 }
             }
             .padding()
-            .navigationTitle("App Information")
+            .navigationBarTitle("App Insights")
         }
     }
+   
 }
 
 

@@ -21,10 +21,11 @@ struct ConfigView: View {
             VStack {
                 button.view()
                     .frame(width: 236, height:64)
+                    
                     .overlay(
                         Label("Select Apps to Lock", systemImage:"arrow.forward")
                             .offset(x:4, y: 4)
-                            .font(.headline)
+                            .customFont(.headline)
                     )
                     .background(
                         Color.black

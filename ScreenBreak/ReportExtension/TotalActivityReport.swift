@@ -58,6 +58,9 @@ struct TotalActivityReport: DeviceActivityReportScene {
                         let appName = (ap.application.localizedDisplayName ?? "nil")
                         let bundle = (ap.application.bundleIdentifier ?? "nil")
                         let duration = Int(ap.totalActivityDuration)
+                        if appName == bundle{
+                            continue
+                        }
                         let durationInterval = ap.totalActivityDuration
                         let category = c.category.localizedDisplayName!
                         let token = ap.application.token!

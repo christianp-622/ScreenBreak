@@ -12,6 +12,8 @@ import FamilyControls
 
 struct CardView: View {
     let app: AppDeviceActivity
+    let disablePopover:Bool
+    
     @State private var showInfo = false
     
     var body: some View {
@@ -24,13 +26,21 @@ struct CardView: View {
             VStack {
                 Label(app.token)
                     .labelStyle(.iconOnly)
+                    .frame(width:50, height:50)
                     .shadow(radius: 2)
                     .scaleEffect(3)
-                    .frame(width:50, height:50)
+                    .padding(4)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 8, style:.continuous)
+                               .stroke(.black, lineWidth: 2)
+                       )
+                    
+                   
                     
                 Text(app.displayName)
+                    .customFont(.subheadline2)
                     .scaledToFill()
-                    .minimumScaleFactor(0.5)
+                    .minimumScaleFactor(0.2)
                     .lineLimit(1)
                     
             }
@@ -38,11 +48,13 @@ struct CardView: View {
             .multilineTextAlignment(.center)
         }
         .frame(width: 100, height:100)
-        .shadow(color:.accentColor.opacity(0.2), radius:2, x:3, y:5)
+        
         
         .padding()
         .onTapGesture{
-            showInfo.toggle()
+            if !disablePopover {
+                showInfo.toggle()
+            }
         }
         .popover(isPresented: $showInfo, arrowEdge: .bottom) {
             CardViewPopup(app:app)
@@ -60,15 +72,35 @@ struct CardViewPopup: View {
                 .scaleEffect(3)
                 .frame(width:50, height:50)
             Text(app.displayName)
-                .font(.system(size: 36))
+                .customFont(.title2)
             Spacer()
-            Text("Application Category: **\(app.category)**")
+            HStack {
+                Text("Application Category:")
+                    .customFont(.subheadline)
+                Text("\(app.category)")
+                    .customFont(.subheadline2)
+                }
             Spacer()
-            Text("Total Application Pickups: **\(app.numberOfPickups)**")
+            HStack {
+                Text("Total Application Pickups:")
+                    .customFont(.subheadline)
+                Text("\(app.numberOfPickups)")
+                    .customFont(.subheadline2)
+                }
             Spacer()
-            Text("Total Number of Notifications: **\(app.numberOfNotifs)**")
+            HStack {
+                Text("Total Number of Notifications:")
+                    .customFont(.subheadline)
+                Text("\(app.numberOfNotifs)")
+                    .customFont(.subheadline2)
+                }
             Spacer()
-            Text("Screen Time: **\(app.duration)**")
+            HStack {
+                Text("Screen Time:")
+                    .customFont(.subheadline)
+                Text("\(app.duration)")
+                    .customFont(.subheadline2)
+                }
         }
         .fixedSize()
         //.frame(width: .infinity, height: 200)

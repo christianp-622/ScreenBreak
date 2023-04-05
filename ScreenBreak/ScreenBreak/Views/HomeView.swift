@@ -26,63 +26,52 @@ struct HomeView: View {
     @EnvironmentObject var model: MyModel
     let button = RiveViewModel(fileName: "button")
     @State private var isDiscouragedPresented = false
+    
+    init() {
+        //Use this if NavigationBarTitle is with Large Font
+        UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "Poppins-Bold", size: 40)!]
+
+        //Use this if NavigationBarTitle is with displayMode = .inline
+        //UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "Georgia-Bold", size: 20)!]
+        }
 
     var body: some View {
-        VStack {
-            DeviceActivityReport(categoryContext, filter: filter)
-            DeviceActivityReport(topThreecontext, filter: filter)
-            button.view()
-                .frame(width: 236, height:64)
-                .overlay(
-                    Label("Select Apps to Lock", systemImage:"arrow.forward")
-                        .offset(x:4, y: 4)
-                        .font(.headline)
-                )
-                .background(
-                    Color.black
-                        .cornerRadius(30)
-                        .blur(radius:10)
-                        .opacity(0.3)
-                        .offset(y:10)
-                )
-                .onTapGesture{
-                    try? button.play(animationName:"active")
-                    
-                    isDiscouragedPresented = true
-                }
-                .familyActivityPicker(isPresented: $isDiscouragedPresented, selection: $model.selectionToDiscourage)
-            
-            Spacer(minLength: 80)
-            
-        }.onChange(of: model.selectionToDiscourage) { newSelection in
+        NavigationView {
+            VStack {
+                DeviceActivityReport(categoryContext, filter: filter)
+                DeviceActivityReport(topThreecontext, filter: filter)
+                button.view()
+                    .frame(width: 236, height:64)
+                    .overlay(
+                        Label("Select Apps to Lock", systemImage:"arrow.forward")
+                            .offset(x:4, y: 4)
+                            .font(.headline)
+                    )
+                    .background(
+                        Color.black
+                            .cornerRadius(30)
+                            .blur(radius:10)
+                            .opacity(0.3)
+                            .offset(y:10)
+                    )
+                    .onTapGesture{
+                        try? button.play(animationName:"active")
+                        
+                        isDiscouragedPresented = true
+                    }
+                    .familyActivityPicker(isPresented: $isDiscouragedPresented, selection: $model.selectionToDiscourage)
+                
+                Spacer(minLength: 80)
+                    .navigationBarTitle("Home")
+                
+            }.onChange(of: model.selectionToDiscourage) { newSelection in
             MyModel.shared.setShieldRestrictions()}
+        }
     }
     
     var topApps: some View{
         Text("")
     }
-    
-    /*var body: some View {
-        NavigationView {
-            VStack{
-                
-                Button("Set Time Limits"){
-                    print("hello world")
-                }.buttonStyle(.bordered)
-                
-            }
-            .padding()
-            .navigationBarTitle("ScreenBreak")
-            .navigationBarItems(trailing:
-                Image("appLogo")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 70, height: 70)
-                .padding()
-                )
-        }
-        .navigationViewStyle(.stack)
-    }*/
 
 }
 
