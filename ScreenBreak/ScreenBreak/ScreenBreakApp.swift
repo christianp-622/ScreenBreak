@@ -27,10 +27,9 @@ struct ScreenBreakApp: App {
     let persistenceController = PersistenceController.shared
     let center = AuthorizationCenter.shared
     @StateObject var launchScreenManager = LaunchScreenManager()
-    @StateObject var model = MyModel.shared
-    @StateObject var store = ManagedSettingsStore()
+//    @StateObject var model = MyModel.shared
+//    @StateObject var store = ManagedSettingsStore()
     @State var show = false
-    
 
     
     var body: some Scene {
@@ -38,8 +37,7 @@ struct ScreenBreakApp: App {
             ZStack{
                 VStack{
                     if show {
-                        ContentView().environmentObject(model)
-                            .environmentObject(store)
+                        SignInView()
                     }else{
                         STProgressView()
                     }

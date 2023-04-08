@@ -8,14 +8,22 @@
 import SwiftUI
 import FirebaseAuth
 import RiveRuntime
+import ManagedSettings
 
 struct SignInView: View {
+    
+    // Declare a presentation mode environment variable to dismiss this view
+    @Environment(\.presentationMode) var presentationMode
     
     @State var phoneNumber = ""
     @State var verificationCode = ""
     @State var verificationID: String?
     @State var showErrorAlert = false
     @State var errorMessage = ""
+    @Environment(\.managedObjectContext) private var viewContext
+    @EnvironmentObject var launchScreenManager: LaunchScreenManager
+    @StateObject var model = MyModel.shared
+    @StateObject var store = ManagedSettingsStore()
     
     var body: some View {
         VStack {
@@ -61,6 +69,7 @@ struct SignInView: View {
                         return
                     }
                     // Sign in successful
+                    ContentView().environmentObject(model).environmentObject(store)
                 }
             }) {
                 Text("Sign In")
@@ -80,6 +89,6 @@ struct SignInView: View {
 
 struct SignInView_Provider: PreviewProvider {
     static var previews: some View {
-        SignInView()
+        SignInView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext).environmentObject(LaunchScreenManager())
     }
 }
