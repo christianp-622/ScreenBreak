@@ -22,20 +22,16 @@ struct ContentView: View {
             switch selectedTab{
             case .home:
                 HomeView()
-            case .search:
+            case .star:
                 ZStack{
                     LoadingAnimation()
                     AppsView()
                 }
-               
             case .timer:
                 ConfigView()
-            case .settings:
-                LeaderboardView()
-            case .user:
-                SettingsView()
+            case .search:
+                MoreInsightsView()
             }
-            
             TabBar()
         }.onAppear{
             DispatchQueue
