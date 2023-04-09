@@ -31,7 +31,6 @@ class MyModel: ObservableObject {
     func setShieldRestrictions() {
         // Pull the selection out of the app's model and configure the application shield restriction accordingly
         let applications = MyModel.shared.selectionToDiscourage
-        
         store.shield.applications = applications.applicationTokens.isEmpty ? nil : applications.applicationTokens
         store.shield.applicationCategories = applications.categoryTokens.isEmpty
         ? nil

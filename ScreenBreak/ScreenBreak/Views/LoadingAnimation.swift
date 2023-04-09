@@ -29,9 +29,9 @@ struct LoadingAnimation: View {
     }
 }
 
-//
-//struct LoadingAnimation_Previews: PreviewProvider {
-//    static var previews: some View {
-//        LoadingAnimation(isPresented:$true)
-//    }
-//}
+
+struct LoadingAnimation_Previews: PreviewProvider {
+    static var previews: some View {
+        LoadingAnimation()
+    }
+}

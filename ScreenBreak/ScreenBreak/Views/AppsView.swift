@@ -29,8 +29,11 @@ struct AppsView: View {
     
     var body: some View {
         NavigationView {
-            DeviceActivityReport(context, filter: filter)
-
+            ZStack{
+                LoadingAnimation()
+                DeviceActivityReport(context, filter: filter)
+            }
+            .navigationBarTitle("App Insights")
         }
         .navigationViewStyle(.stack)
     }

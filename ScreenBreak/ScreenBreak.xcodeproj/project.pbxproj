@@ -94,6 +94,10 @@
 		48AE9A3129E240A10092766C /* sblogosmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 48AE9A2F29E240A10092766C /* sblogosmall.png */; };
 		48AE9A3229E240A10092766C /* sblogosmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 48AE9A2F29E240A10092766C /* sblogosmall.png */; };
 		48AE9A3329E240A10092766C /* sblogosmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 48AE9A2F29E240A10092766C /* sblogosmall.png */; };
+		48AE9A3529E245340092766C /* CorrectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE9A3429E245340092766C /* CorrectButton.swift */; };
+		48AE9A3629E245340092766C /* CorrectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE9A3429E245340092766C /* CorrectButton.swift */; };
+		48AE9A3729E245340092766C /* CorrectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE9A3429E245340092766C /* CorrectButton.swift */; };
+		48AE9A3829E245340092766C /* CorrectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE9A3429E245340092766C /* CorrectButton.swift */; };
 		DD69DAAB29D20C850024831D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD69DAAA29D20C850024831D /* GoogleService-Info.plist */; };
 		DD69DAAE29D20D290024831D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = DD69DAAD29D20D290024831D /* FirebaseAuth */; };
 		DD69DAC029D212560024831D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD69DABD29D212560024831D /* LoginView.swift */; };
@@ -229,6 +233,7 @@
 		48AE9A2529E22DEF0092766C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48AE9A2629E22DEF0092766C /* shield.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = shield.entitlements; sourceTree = "<group>"; };
 		48AE9A2F29E240A10092766C /* sblogosmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sblogosmall.png; sourceTree = "<group>"; };
+		48AE9A3429E245340092766C /* CorrectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectButton.swift; sourceTree = "<group>"; };
 		DD69DAAA29D20C850024831D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DD69DABD29D212560024831D /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		DD69DABE29D212560024831D /* SignInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
@@ -422,6 +427,7 @@
 				481388F229ABE0F2001B8A55 /* ContentView.swift */,
 				DDEEB70D29DB4560006FC9E5 /* CreateProfileView.swift */,
 				488340BB29C8A80B00910A27 /* LaunchScreenView.swift */,
+				48AE9A3429E245340092766C /* CorrectButton.swift */,
 				488340B329B80CE800910A27 /* TabBar.swift */,
 				DD69DABF29D212560024831D /* RegisterView.swift */,
 				DD69DABD29D212560024831D /* LoginView.swift */,
@@ -734,6 +740,7 @@
 			files = (
 				488340B229B80B5100910A27 /* ConfigView.swift in Sources */,
 				4846CFD029D1E888005D018E /* MyModel.swift in Sources */,
+				48AE9A3529E245340092766C /* CorrectButton.swift in Sources */,
 				DD69DAC229D212560024831D /* RegisterView.swift in Sources */,
 				4846CFD229D1E8E0005D018E /* MySchedule.swift in Sources */,
 				4846CFB329CCA666005D018E /* ChartView.swift in Sources */,
@@ -784,6 +791,7 @@
 				4846CFE729D313FA005D018E /* CategoryChartView.swift in Sources */,
 				48AE99F429DA4C330092766C /* TopAppsReport.swift in Sources */,
 				48AE99F629DA4CB10092766C /* TopThreeView.swift in Sources */,
+				48AE9A3629E245340092766C /* CorrectButton.swift in Sources */,
 				48AE99F929DC7E6F0092766C /* CustomFont.swift in Sources */,
 				4846CFBF29D1039E005D018E /* TotalActivityReport.swift in Sources */,
 				4846CFE929D32208005D018E /* ExampleView.swift in Sources */,
@@ -796,6 +804,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48AE9A3729E245340092766C /* CorrectButton.swift in Sources */,
 				48AE9A1829DF316B0092766C /* LoadingAnimation.swift in Sources */,
 				4846CFDB29D1E94F005D018E /* DeviceActivityMonitorExtension.swift in Sources */,
 				48AE99FA29DC7E6F0092766C /* CustomFont.swift in Sources */,
@@ -806,6 +815,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48AE9A3829E245340092766C /* CorrectButton.swift in Sources */,
 				48AE9A2429E22DEF0092766C /* ShieldConfigurationExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

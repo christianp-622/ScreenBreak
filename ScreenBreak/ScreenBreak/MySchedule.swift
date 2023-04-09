@@ -14,13 +14,13 @@ extension DeviceActivityName {
     static let daily = Self("daily")
 }
 
-// I want to remove the application shield restriction when the child accumulates enough usage for a set of guardian-selected encouraged apps
+
 extension DeviceActivityEvent.Name {
     // Set the name of the event to "encouraged"
     static let encouraged = Self("encouraged")
 }
 
-// The Device Activity schedule represents the time bounds in which my extension will monitor for activity
+// The Schedule represents the time that will the extension will monitor for activity
 let schedule = DeviceActivitySchedule(
     // I've set my schedule to start and end at midnight
     // perhaps change this

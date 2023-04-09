@@ -12,6 +12,7 @@ import ManagedSettingsUI
 struct TotalActivityView: View {
     var activityReport: ActivityReport
     private var adaptiveColumns = [GridItem(.adaptive(minimum:100))]
+    
     @State var delay = 0.1
     @State private var offset = CGSize.zero
     @State private var isShowingAnimation = false
@@ -22,20 +23,12 @@ struct TotalActivityView: View {
         }
     
     var body: some View {
-        NavigationView{
-            ZStack{
-                appsScrollView
-                
-//                if isShowingAnimation {
-//                   animation
-//               }
-            }
-            .padding()
-            .navigationBarTitle("App Insights")
-            .onAppear {
-                        isShowingAnimation = true
-                    }
+        ZStack{
+            
+            appsScrollView
         }
+        .padding()
+        
     }
     
     var appsScrollView: some View{
