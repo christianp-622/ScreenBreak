@@ -28,6 +28,7 @@ struct ScreenBreakApp: App {
     let center = AuthorizationCenter.shared
     @StateObject var launchScreenManager = LaunchScreenManager()
     @StateObject var model = MyModel.shared
+    //MySchedule;.setSchedule()
     @StateObject var store = ManagedSettingsStore()
     @State var show = false
     

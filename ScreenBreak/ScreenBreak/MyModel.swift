@@ -17,11 +17,9 @@ class MyModel: ObservableObject {
     //@EnvironmentObject var store: ManagedSettingsStore
     
     @Published var selectionToDiscourage: FamilyActivitySelection
-    @Published var selectionToEncourage: FamilyActivitySelection
     
     init() {
         selectionToDiscourage = FamilyActivitySelection()
-        selectionToEncourage = FamilyActivitySelection()
     }
     
     class var shared: MyModel {
