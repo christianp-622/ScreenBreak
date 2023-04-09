@@ -23,9 +23,9 @@ struct TotalActivityView: View {
         }
     
     var body: some View {
-        ZStack{
-            
+        NavigationView{
             appsScrollView
+                .navigationTitle("Screen Time")
         }
         .padding()
         

@@ -33,7 +33,6 @@ struct AppsView: View {
                 LoadingAnimation()
                 DeviceActivityReport(context, filter: filter)
             }
-            .navigationBarTitle("App Insights")
         }
         .navigationViewStyle(.stack)
     }
