@@ -103,6 +103,7 @@
 		DD69DAC029D212560024831D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD69DABD29D212560024831D /* LoginView.swift */; };
 		DD69DAC129D212560024831D /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD69DABE29D212560024831D /* SignInView.swift */; };
 		DD69DAC229D212560024831D /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD69DABF29D212560024831D /* RegisterView.swift */; };
+		DDA5B35729E37060006E17B0 /* PickupsChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA5B35629E37060006E17B0 /* PickupsChartView.swift */; };
 		DDEEB70E29DB4560006FC9E5 /* CreateProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEEB70D29DB4560006FC9E5 /* CreateProfileView.swift */; };
 /* End PBXBuildFile section */
 
@@ -238,6 +239,7 @@
 		DD69DABD29D212560024831D /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		DD69DABE29D212560024831D /* SignInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		DD69DABF29D212560024831D /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		DDA5B35629E37060006E17B0 /* PickupsChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupsChartView.swift; sourceTree = "<group>"; };
 		DDEEB70D29DB4560006FC9E5 /* CreateProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -391,6 +393,7 @@
 				4846CFE429D313B1005D018E /* TotalCategoryAndAppReport.swift */,
 				4846CFE629D313FA005D018E /* CategoryChartView.swift */,
 				4846CFE829D32208005D018E /* ExampleView.swift */,
+				DDA5B35629E37060006E17B0 /* PickupsChartView.swift */,
 				4846CFC229D1039E005D018E /* Info.plist */,
 				4846CFC329D1039E005D018E /* ReportExtension.entitlements */,
 			);
@@ -797,6 +800,7 @@
 				4846CFE929D32208005D018E /* ExampleView.swift in Sources */,
 				4846CFF029D49A48005D018E /* CardView.swift in Sources */,
 				4846CFE529D313B1005D018E /* TotalCategoryAndAppReport.swift in Sources */,
+				DDA5B35729E37060006E17B0 /* PickupsChartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
