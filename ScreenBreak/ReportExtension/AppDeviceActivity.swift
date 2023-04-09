@@ -37,6 +37,8 @@ struct AppDeviceActivity: Identifiable {
 struct CategoryReport{
     var totalDuration:TimeInterval
     var categories: [CategoryDeviceActivity]
+    var chartData: [(String, Double)]
+    var appChartData: [(String, Double)]
 }
 
 struct CategoryDeviceActivity: Identifiable {
@@ -55,6 +57,7 @@ extension TimeInterval{
         let hours = (time / 3600)
         return String(format: "%0.2d:%0.2d",hours,minutes)
     }
+    
     func stringFromTimeIntervalChartLabel() -> String {
             let time = NSInteger(self)
             let minutes = (time / 60) % 60
@@ -64,4 +67,40 @@ extension TimeInterval{
         }
             return String(format: " %0.2dh %0.2dm ",hours,minutes)
     }
+    
+    func formatedDuration() -> String{
+        let duration = NSInteger(self)
+        let numberOfHours = duration / 3600
+        let numberOfMins = (duration % 3600) / 60
+        var formatedDuration = ""
+        if numberOfHours == 0 {
+            if numberOfMins != 1{
+                formatedDuration = "\(numberOfMins)mins"
+            }else{
+                formatedDuration = "\(numberOfMins)min"
+            }
+        }else if numberOfHours == 1{
+            if numberOfMins != 1{
+                formatedDuration = "\(numberOfHours)hr \(numberOfMins)mins"
+            }else{
+                formatedDuration = "\(numberOfHours)hr \(numberOfMins)min"
+            }
+        }else{
+            if numberOfMins != 1{
+                formatedDuration = "\(numberOfHours)hrs \(numberOfMins)mins"
+            }else{
+                formatedDuration = "\(numberOfHours)hrs \(numberOfMins)min"
+            }
+        }
+        return formatedDuration
+    }
+    
+    func durationInHours() -> Double{
+        let duration = NSInteger(self)
+        let numberOfHours = duration / 3600
+        return Double(numberOfHours)
+        
+    }
+    
+    
 }

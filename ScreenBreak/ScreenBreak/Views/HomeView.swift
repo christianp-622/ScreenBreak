@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftUICharts
 import RiveRuntime
 import DeviceActivity
 
@@ -28,24 +29,23 @@ struct HomeView: View {
     @State private var isDiscouragedPresented = false
     
     init() {
-        //Use this if NavigationBarTitle is with Large Font
         UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "Poppins-Bold", size: 40)!]
 
-        //Use this if NavigationBarTitle is with displayMode = .inline
-        //UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "Georgia-Bold", size: 20)!]
         }
+    
 
     var body: some View {
         NavigationView {
             VStack {
                 DeviceActivityReport(categoryContext, filter: filter)
                 DeviceActivityReport(topThreecontext, filter: filter)
+                
                 button.view()
                     .frame(width: 236, height:64)
                     .overlay(
                         Label("Select Apps to Lock", systemImage:"arrow.forward")
                             .offset(x:4, y: 4)
-                            .font(.headline)
+                            .customFont(.headline)
                     )
                     .background(
                         Color.black
@@ -56,21 +56,26 @@ struct HomeView: View {
                     )
                     .onTapGesture{
                         try? button.play(animationName:"active")
-                        
-                        isDiscouragedPresented = true
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                            isDiscouragedPresented.toggle()
+                        }
                     }
                     .familyActivityPicker(isPresented: $isDiscouragedPresented, selection: $model.selectionToDiscourage)
                 
-                Spacer(minLength: 80)
-                    .navigationBarTitle("Home")
+               
+                    
                 
-            }.onChange(of: model.selectionToDiscourage) { newSelection in
-            MyModel.shared.setShieldRestrictions()}
+                Spacer(minLength:80)
+                
+            }
+            .multilineTextAlignment(.center)
+            .frame(maxWidth: .infinity)
+            .navigationBarTitle("Home")
+            .onChange(of: model.selectionToDiscourage) { newSelection in
+                    MyModel.shared.setShieldRestrictions()}
         }
-    }
-    
-    var topApps: some View{
-        Text("")
+        .navigationViewStyle(.stack)
+        
     }
 
 }

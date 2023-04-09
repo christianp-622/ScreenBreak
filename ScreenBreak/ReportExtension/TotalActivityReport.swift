@@ -30,7 +30,6 @@ struct TotalActivityReport: DeviceActivityReportScene {
     func makeConfiguration(representing data: DeviceActivityResults<DeviceActivityData>) async -> ActivityReport {
         // Reformat the data into a configuration that can be used to create
         // the report's view.
-        var res = ""
         var list: [AppDeviceActivity] = []
         let totalActivityDuration = await data.flatMap { $0.activitySegments }.reduce(0, {
             $0 + $1.totalActivityDuration
@@ -40,12 +39,8 @@ struct TotalActivityReport: DeviceActivityReportScene {
         var firstPickup:Date?
         var categories:[String] = []
        
-        
         for await d in data {
-            res += d.user.appleID!.debugDescription
-            res += d.lastUpdatedDate.description
             for await a in d.activitySegments{
-                res += a.totalActivityDuration.formatted()
                 totalPickups = a.totalPickupsWithoutApplicationActivity
                 longestActivity = a.longestActivity
                 firstPickup = a.firstPickup
@@ -54,13 +49,13 @@ struct TotalActivityReport: DeviceActivityReportScene {
                 for await c in a.categories {
                     categories.append((c.category.localizedDisplayName)!)
                     for await ap in c.applications {
-                        
                         let appName = (ap.application.localizedDisplayName ?? "nil")
                         let bundle = (ap.application.bundleIdentifier ?? "nil")
-                        let duration = Int(ap.totalActivityDuration)
                         if appName == bundle{
                             continue
                         }
+                        
+                        let duration = Int(ap.totalActivityDuration)
                         let durationInterval = ap.totalActivityDuration
                         let category = c.category.localizedDisplayName!
                         let token = ap.application.token!

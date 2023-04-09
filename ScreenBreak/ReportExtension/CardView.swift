@@ -9,11 +9,32 @@ import SwiftUI
 import DeviceActivity
 import ManagedSettings
 import FamilyControls
+import CoreHaptics
+
+struct HapticFeedback: ViewModifier {
+  private let generator: UIImpactFeedbackGenerator
+
+  init(style: UIImpactFeedbackGenerator.FeedbackStyle) {
+    generator = UIImpactFeedbackGenerator(style: style)
+  }
+
+  func body(content: Content) -> some View {
+    content
+      .onTapGesture(perform: generator.impactOccurred)
+  }
+}
+
+extension View {
+  func hapticFeedback(style: UIImpactFeedbackGenerator.FeedbackStyle = .rigid) -> some View {
+    self.modifier(HapticFeedback(style: style))
+  }
+}
 
 struct CardView: View {
     let app: AppDeviceActivity
     let disablePopover:Bool
     
+    @State private var tapped = false
     @State private var showInfo = false
     
     var body: some View {
@@ -30,12 +51,12 @@ struct CardView: View {
                     .shadow(radius: 2)
                     .scaleEffect(3)
                     .padding(4)
+                    .mask(RoundedRectangle(cornerRadius: 8, style:.continuous))
+                        
                     .overlay(
                         RoundedRectangle(cornerRadius: 8, style:.continuous)
                                .stroke(.black, lineWidth: 2)
                        )
-                    
-                   
                     
                 Text(app.displayName)
                     .customFont(.subheadline2)
@@ -48,12 +69,20 @@ struct CardView: View {
             .multilineTextAlignment(.center)
         }
         .frame(width: 100, height:100)
-        
-        
         .padding()
+        .scaleEffect(tapped ? 1.4 : 1)
+        .animation(.spring(response: 0.4, dampingFraction: 0.6))
         .onTapGesture{
-            if !disablePopover {
-                showInfo.toggle()
+            var temp = UIImpactFeedbackGenerator(style:.heavy)
+            temp.impactOccurred()
+            if !disablePopover{
+                tapped.toggle()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    tapped.toggle()
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3){
+                    showInfo.toggle()
+                }
             }
         }
         .popover(isPresented: $showInfo, arrowEdge: .bottom) {

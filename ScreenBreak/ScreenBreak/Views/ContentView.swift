@@ -23,7 +23,11 @@ struct ContentView: View {
             case .home:
                 HomeView()
             case .search:
-                AppsView()
+                ZStack{
+                    LoadingAnimation()
+                    AppsView()
+                }
+               
             case .timer:
                 ConfigView()
             case .settings:

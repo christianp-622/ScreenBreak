@@ -30,6 +30,8 @@ struct SettingsView: View {
                             .offset(x:200, y:100)
                     )
                 Text("Settings")
+                    
+                
             }.navigationTitle("Settings")
         }
         .navigationViewStyle(.stack)

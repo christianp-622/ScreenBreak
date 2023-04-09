@@ -10,6 +10,7 @@ import DeviceActivity
 import RiveRuntime
 
 struct AppsView: View {
+    @State private var isLoaded = true
     @State private var context: DeviceActivityReport.Context = .init(rawValue: "Total Activity")
     @State private var filter = DeviceActivityFilter(
         segment: .daily(
@@ -22,20 +23,20 @@ struct AppsView: View {
     )
     
     init() {
-            //Use this if NavigationBarTitle is with Large Font
-            UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "Poppins-Bold", size: 40)!]
-
-            //Use this if NavigationBarTitle is with displayMode = .inline
-            //UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "Georgia-Bold", size: 20)!]
-        }
+        // Allows us to make the navBarTitle appear in our custom font
+        UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "Poppins-Bold", size: 40)!]
+    }
     
     var body: some View {
         NavigationView {
             DeviceActivityReport(context, filter: filter)
+
         }
         .navigationViewStyle(.stack)
     }
+    
 }
+
 
 struct AppsView_Previews: PreviewProvider {
     static var previews: some View {
