@@ -19,6 +19,7 @@ struct ContentView: View {
 
     var body: some View {
         ZStack{
+            Color("backgroundColor")
             switch selectedTab{
             case .home:
                 HomeView()

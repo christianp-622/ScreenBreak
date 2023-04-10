@@ -36,44 +36,47 @@ struct HomeView: View {
 
     var body: some View {
         NavigationView {
-            VStack {
-                DeviceActivityReport(categoryContext, filter: filter)
-                DeviceActivityReport(topThreecontext, filter: filter)
-              //  AnimatedButton()
-                button.view()
-                    .frame(width: 236, height:64)
-                    .overlay(
-                        Label("Select Apps to Lock", systemImage:"lock.fill")
-                            .offset(x:4, y: 4)
-                            .customFont(.headline)
-                            .foregroundColor(Color(.darkGray))
-                    )
-                    .background(
-                        Color.black
-                            .cornerRadius(30)
-                            .blur(radius:10)
-                            .opacity(0.3)
-                            .offset(y:10)
-                    )
-                    .onTapGesture{
-                        button.play(animationName:"active")
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                            isDiscouragedPresented.toggle()
+            ZStack {
+                Color("backgroundColor")
+                    .edgesIgnoringSafeArea(.all)
+                VStack {
+                    DeviceActivityReport(topThreecontext, filter: filter)
+                    DeviceActivityReport(categoryContext, filter: filter)
+                    button.view()
+                        .frame(width: 236, height:64)
+                        .overlay(
+                            Label("Select Apps to Lock", systemImage:"lock.fill")
+                                .offset(x:4, y: 4)
+                                .customFont(.headline)
+                                .foregroundColor(Color(.darkGray))
+                        )
+                        .background(
+                            Color.black
+                                .cornerRadius(30)
+                                .blur(radius:10)
+                                .opacity(0.3)
+                                .offset(y:10)
+                        )
+                        .onTapGesture{
+                            button.play(animationName:"active")
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                isDiscouragedPresented.toggle()
+                            }
                         }
-                    }
-                    .familyActivityPicker(isPresented: $isDiscouragedPresented, selection: $model.selectionToDiscourage)
-                
-               
+                        .familyActivityPicker(isPresented: $isDiscouragedPresented, selection: $model.selectionToDiscourage)
                     
-                
-                Spacer(minLength:80)
-                
+                   
+                        
+                    
+                    Spacer(minLength:80)
+                    
+                }
+                .multilineTextAlignment(.center)
+                .frame(maxWidth: .infinity)
+                .navigationBarTitle("Home")
+                .onChange(of: model.selectionToDiscourage) { newSelection in
+                MyModel.shared.setShieldRestrictions()}
             }
-            .multilineTextAlignment(.center)
-            .frame(maxWidth: .infinity)
-            .navigationBarTitle("Home")
-            .onChange(of: model.selectionToDiscourage) { newSelection in
-                    MyModel.shared.setShieldRestrictions()}
         }
         .navigationViewStyle(.stack)
         

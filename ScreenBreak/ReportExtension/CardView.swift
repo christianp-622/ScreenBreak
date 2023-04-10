@@ -30,6 +30,10 @@ extension View {
   }
 }
 
+extension Color{
+    static let borderColor = Color("border")
+}
+
 struct CardView: View {
     let app: AppDeviceActivity
     let disablePopover:Bool
@@ -55,7 +59,7 @@ struct CardView: View {
                         
                     .overlay(
                         RoundedRectangle(cornerRadius: 8, style:.continuous)
-                               .stroke(.black, lineWidth: 2)
+                            .stroke(Color.borderColor, lineWidth: 2)
                        )
                     
                 Text(app.displayName)

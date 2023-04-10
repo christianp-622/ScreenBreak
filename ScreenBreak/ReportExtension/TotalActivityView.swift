@@ -23,11 +23,20 @@ struct TotalActivityView: View {
         }
     
     var body: some View {
-        NavigationView{
-            appsScrollView
+        ZStack {
+            Color("backgroundColor")
+                .edgesIgnoringSafeArea(.all)
+            
+            NavigationView{
+                ZStack{
+                    Color("backgroundColor")
+                        .edgesIgnoringSafeArea(.all)
+                    appsScrollView
+                }
                 .navigationTitle("Screen Time")
+            }
+            .padding()
         }
-        .padding()
         
     }
     

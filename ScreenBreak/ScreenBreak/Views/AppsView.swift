@@ -30,7 +30,8 @@ struct AppsView: View {
     var body: some View {
         NavigationView {
             ZStack{
-                LoadingAnimation()
+                Color("backgroundColor")
+                    .edgesIgnoringSafeArea(.all)
                 DeviceActivityReport(context, filter: filter)
             }
         }

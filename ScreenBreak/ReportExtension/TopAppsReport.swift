@@ -65,7 +65,17 @@ struct TopAppsReport: DeviceActivityReportScene {
             }
         }
         list.sort(by: sortApps)
-        
+        if list.count < 3{
+            if list.count == 2{
+                
+            }
+            if list.count == 1{
+                
+            }
+            if list.count == 0{
+                
+            }
+        }
         return TopThreeReport(apps: [list[0], list[1], list[2]])
     }
 }

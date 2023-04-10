@@ -14,18 +14,22 @@ struct CategoryChartView: View {
     var categoryReport: CategoryReport
     
     var body: some View {
-        VStack{
-            Text("Total Screen Time: \(categoryReport.totalDuration.formatedDuration())").customFont(.headline)
+        ZStack {
+            Color("backgroundColor")
+                .edgesIgnoringSafeArea(.all)
             VStack{
-                Text("Daily Insights").customFont(.subheadline)
-                TabView{
-                    BarChartView(data: ChartData(values: categoryReport.chartData), title: "Minutes ",legend: "Categories", style: Styles.barChartStyleNeonBlueLight,form:ChartForm.medium,dropShadow:true)
-                    BarChartView(data: ChartData(values: categoryReport.appChartData), title: "Apps", legend: "App Time",form:ChartForm.medium,dropShadow:true)
+                //Text("Total Screen Time: \(categoryReport.totalDuration.formatedDuration())").customFont(.headline)
+                VStack{
+                    //Text("Daily Insights").customFont(.subheadline)
+                    TabView{
+                        BarChartView(data: ChartData(values: categoryReport.chartData), title: "Minutes ",legend: "Categories", style: Styles.barChartStyleNeonBlueLight,form:ChartForm.medium,dropShadow:true)
+                        BarChartView(data: ChartData(values: categoryReport.appChartData), title: "Apps", legend: "App Time",form:ChartForm.medium,dropShadow:true)
+                    }
+                    .tabViewStyle(.page)
+                    .indexViewStyle(
+                        .page(backgroundDisplayMode:
+                            .interactive))
                 }
-                .tabViewStyle(.page)
-                .indexViewStyle(
-                    .page(backgroundDisplayMode:
-                        .interactive))
             }
         }
         /*
