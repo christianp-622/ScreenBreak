@@ -24,10 +24,9 @@ struct ReportExtension: DeviceActivityReportExtension {
             TopThreeView(topThreeReport: topThreeReport)
         }
         
-        
-        
-        
-        
+        TotalPickupsReport { moreInsightsReport in
+            PickupsChartView(moreInsightsReport: moreInsightsReport)
+        }
         
     }
 }

@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import DeviceActivity
 import ManagedSettings
+import SwiftUICharts
 
 struct ActivityReport {
     let totalDuration: TimeInterval
@@ -32,6 +33,17 @@ struct AppDeviceActivity: Identifiable {
     var numberOfPickups: Int
     var category: String
     var numberOfNotifs: Int
+}
+
+struct MoreInsightsReport{
+    var apps: [AppDeviceActivity]
+    var categories: [CategoryDeviceActivity]
+    var firstPickup: String?
+    var totalPickupsWithoutApplicationActivity: Int
+    var longestActivity: String?
+    var pickupsChartData: ChartData
+    var notifsChartData: ChartData
+    
 }
 
 struct CategoryReport{

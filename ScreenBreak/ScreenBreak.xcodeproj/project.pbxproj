@@ -104,6 +104,7 @@
 		DD69DAC129D212560024831D /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD69DABE29D212560024831D /* SignInView.swift */; };
 		DD69DAC229D212560024831D /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD69DABF29D212560024831D /* RegisterView.swift */; };
 		DDA5B35729E37060006E17B0 /* PickupsChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA5B35629E37060006E17B0 /* PickupsChartView.swift */; };
+		DDE92BF529E62D5300B3C73B /* TotalPickupsReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE92BF429E62D5300B3C73B /* TotalPickupsReport.swift */; };
 		DDEEB70E29DB4560006FC9E5 /* CreateProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEEB70D29DB4560006FC9E5 /* CreateProfileView.swift */; };
 /* End PBXBuildFile section */
 
@@ -240,6 +241,7 @@
 		DD69DABE29D212560024831D /* SignInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		DD69DABF29D212560024831D /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		DDA5B35629E37060006E17B0 /* PickupsChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupsChartView.swift; sourceTree = "<group>"; };
+		DDE92BF429E62D5300B3C73B /* TotalPickupsReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalPickupsReport.swift; sourceTree = "<group>"; };
 		DDEEB70D29DB4560006FC9E5 /* CreateProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -385,15 +387,16 @@
 			children = (
 				4846CFBC29D1039E005D018E /* ReportExtension.swift */,
 				4846CFBE29D1039E005D018E /* TotalActivityReport.swift */,
+				4846CFC029D1039E005D018E /* TotalActivityView.swift */,
 				48AE99F329DA4C330092766C /* TopAppsReport.swift */,
 				48AE99F529DA4CB10092766C /* TopThreeView.swift */,
-				4846CFEE29D49A1E005D018E /* CardView.swift */,
-				4846CFC029D1039E005D018E /* TotalActivityView.swift */,
-				4846CFCB29D105A1005D018E /* AppDeviceActivity.swift */,
 				4846CFE429D313B1005D018E /* TotalCategoryAndAppReport.swift */,
 				4846CFE629D313FA005D018E /* CategoryChartView.swift */,
-				4846CFE829D32208005D018E /* ExampleView.swift */,
+				DDE92BF429E62D5300B3C73B /* TotalPickupsReport.swift */,
 				DDA5B35629E37060006E17B0 /* PickupsChartView.swift */,
+				4846CFEE29D49A1E005D018E /* CardView.swift */,
+				4846CFCB29D105A1005D018E /* AppDeviceActivity.swift */,
+				4846CFE829D32208005D018E /* ExampleView.swift */,
 				4846CFC229D1039E005D018E /* Info.plist */,
 				4846CFC329D1039E005D018E /* ReportExtension.entitlements */,
 			);
@@ -792,6 +795,7 @@
 				4846CFBD29D1039E005D018E /* ReportExtension.swift in Sources */,
 				48AE9A1729DF316B0092766C /* LoadingAnimation.swift in Sources */,
 				4846CFE729D313FA005D018E /* CategoryChartView.swift in Sources */,
+				DDE92BF529E62D5300B3C73B /* TotalPickupsReport.swift in Sources */,
 				48AE99F429DA4C330092766C /* TopAppsReport.swift in Sources */,
 				48AE99F629DA4CB10092766C /* TopThreeView.swift in Sources */,
 				48AE9A3629E245340092766C /* CorrectButton.swift in Sources */,
