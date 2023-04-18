@@ -9,13 +9,16 @@ import SwiftUI
 import CoreData
 import FamilyControls
 import RiveRuntime
+import ManagedSettings
 
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @AppStorage("selectedTab") var selectedTab: Tab = .home
+    @AppStorage("showOnboarding") var showOnboarding = true
+    @AppStorage("firstTime") var firstTime = true
     @EnvironmentObject var launchScreenManager: LaunchScreenManager
-
+    @State private var isPressed = false
 
     var body: some View {
         ZStack{
@@ -24,24 +27,31 @@ struct ContentView: View {
             case .home:
                 HomeView()
             case .star:
-                ZStack{
-                    LoadingAnimation()
-                    AppsView()
-                }
+                AppsView()
             case .timer:
                 ConfigView()
             case .search:
                 MoreInsightsView()
             }
             TabBar()
-        }.onAppear{
-            DispatchQueue
-                .main
-                .asyncAfter(deadline:.now() + 5){
-                    launchScreenManager.dismiss()
-                }
+            
         }
+        .fullScreenCover(isPresented:$showOnboarding){
+            OnboardingView()
+        }
+        .onAppear{
+            if !showOnboarding{
+                DispatchQueue
+                    .main
+                    .asyncAfter(deadline:.now() + 5){
+                        launchScreenManager.dismiss()
+                    }
+            }
+
+        }
+        
     }
+    
 }
 
 

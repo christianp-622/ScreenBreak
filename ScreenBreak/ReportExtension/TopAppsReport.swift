@@ -11,14 +11,13 @@ import DeviceActivity
 struct TopAppsReport: DeviceActivityReportScene {
     
     // Define which context your scene will represent.
-    let context: DeviceActivityReport.Context = .topThree
+    let context: DeviceActivityReport.Context = .home
     
     // Define the custom configuration and the resulting view for this report.
     let content: (TopThreeReport) -> TopThreeView
     
     func makeConfiguration(representing data: DeviceActivityResults<DeviceActivityData>) async -> TopThreeReport {
-        // Reformat the data into a configuration that can be used to create
-        // the report's view.        var list: [AppDeviceActivity] = []
+        // Reformat the data into a configuration that can be used 
         var list: [AppDeviceActivity] = []
         
         for await d in data {
@@ -80,9 +79,7 @@ struct TopAppsReport: DeviceActivityReportScene {
     }
 }
 
-func sortApps(this:AppDeviceActivity, that:AppDeviceActivity) -> Bool {
-    return this.durationInterval > that.durationInterval
-}
+
 
 
 

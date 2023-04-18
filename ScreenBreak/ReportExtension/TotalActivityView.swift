@@ -13,9 +13,8 @@ struct TotalActivityView: View {
     var activityReport: ActivityReport
     private var adaptiveColumns = [GridItem(.adaptive(minimum:100))]
     
-    @State var delay = 0.1
-    @State private var offset = CGSize.zero
-    @State private var isShowingAnimation = false
+    @State private var showHelp = false
+    @State private var scale = 0.1
     
     init(activityReport: ActivityReport) {
         self.activityReport = activityReport
@@ -34,19 +33,44 @@ struct TotalActivityView: View {
                     appsScrollView
                 }
                 .navigationTitle("Screen Time")
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing){
+                        Button(action: {
+                            showHelp.toggle()
+                            scale = 0.1
+                        }) {
+                            Image(systemName: "questionmark.circle")
+                                .renderingMode(.original)
+                        }
+                    }
+                    
+                }
+
             }
             .padding()
+            
+            if showHelp{
+                tutorialApps
+                    .scaleEffect(scale)
+                    .onAppear{
+                        withAnimation(.easeInOut(duration: 0.3)) {
+                            scale = 1.1
+                        }
+                    }
+            }
         }
         
     }
     
     var appsScrollView: some View{
         ScrollView{
-            VStack(alignment: .center, spacing: 20) {
+            Spacer(minLength:20)
+            VStack(alignment: .center, spacing: 40) {
                 ForEach(0...activityReport.apps.count/3, id: \.self){index in
                     HStack(alignment: .top, spacing: 5) {
                         Spacer()
                         let offset = index * 3
+                        
                         ForEach(offset...(offset+2), id: \.self){index2 in
                             if index2 < activityReport.apps.count{
                                 CardView(app:activityReport.apps[index2], disablePopover: false)
@@ -58,36 +82,47 @@ struct TotalActivityView: View {
                     }
                     .frame(maxWidth: .infinity)
                 }
-               
-                
+                Spacer(minLength:50)
             }
             .multilineTextAlignment(.center)
             .frame(maxWidth: .infinity)
             
         }
+        .disabled(showHelp)
     }
     
-    var animation: some View {
-        ZStack {
-            Circle()
-                .fill(Color.gray)
-                .frame(width: 50, height: 50)
-                .offset(offset)
-            
-            Image(systemName: "arrow.up.right")
-                .font(.system(size: 30))
-                .foregroundColor(.white)
-                .offset(x: 25, y: -25)
+    var tutorialApps: some View{
+        ZStack{
+            Color(.lightGray)
+            VStack(alignment:.center){
+                Text("Tap on any icon to view the corresponding application's insights")
+                    .customFont(.headline)
+                    .multilineTextAlignment(.center)
+                Spacer()
+                    .frame(height:30)
+                Button{
+                    showHelp.toggle()
+                    scale = 0.1
+                }label:{
+                    Text("OK")
+                        .customFont(.headline)
+                        .foregroundColor(.blue.opacity(0.5))
+                        
+                }
+                .frame(width:60, height: 30)
+                .background(Color.white.opacity(0.6))
+                .mask(RoundedRectangle(cornerRadius: 30))
+                .shadow(radius:10)
+            }
+            .padding()
         }
-        .gesture(
-            DragGesture(minimumDistance: 0)
-                .onChanged { value in
-                    offset = value.translation
-                }
-                .onEnded { value in
-                    offset = CGSize.zero
-                }
-        )
+        .frame(width:UIScreen.main.bounds.width * 0.8, height: UIScreen.main.bounds.height * 0.3)
+        .mask(RoundedRectangle(cornerRadius:20))
+        .shadow(color:Color("shadowColor"), radius:10)
+        
+        
+        .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color("Border"), lineWidth: 2))
+        
     }
 }
 

@@ -1,57 +1,55 @@
 //
-//  TotalActivityReport.swift
+//  HomeReport.swift
 //  ReportExtension
 //
-//  Created by Christian Pichardo on 3/26/23.
+//  Created by Christian Pichardo on 3/28/23.
 //
 
-import DeviceActivity
 import SwiftUI
+import DeviceActivity
+import SwiftUICharts
 
-extension DeviceActivityReport.Context {
-    // If your app initializes a DeviceActivityReport with this context, then the system will use
-    // your extension's corresponding DeviceActivityReportScene to render the contents of the
-    // report.
-    static let totalActivity = Self("Total Activity")
-    static let home = Self("Home Report")
-    static let widget = Self("Widget")
-    static let moreInsights = Self("More Insights")
-}
 
-struct TotalActivityReport: DeviceActivityReportScene {
+struct HomeReport: DeviceActivityReportScene {
+
+    let context: DeviceActivityReport.Context = .home
+    let content: (ChartAndTopThreeReport) -> HomeReportView
     
-    // Define which context your scene will represent.
-    let context: DeviceActivityReport.Context = .totalActivity
-    
-    // Define the custom configuration and the resulting view for this report.
-    let content: (ActivityReport) -> TotalActivityView
-    
-    func makeConfiguration(representing data: DeviceActivityResults<DeviceActivityData>) async -> ActivityReport {
-        // Reformat the data into a configuration that can be used to create
-        // the report's view.
-        var list: [AppDeviceActivity] = []
+    func makeConfiguration(representing data: DeviceActivityResults<DeviceActivityData>) async -> ChartAndTopThreeReport {
+
+        // Retrive data from each app and category
+        var categoryList: [CategoryDeviceActivity] = []
+        var appList: [AppDeviceActivity] = []
+        
+        // Format the data so we can display it in charts
+        var categoryChartData:[(String,Double)] = []
+        var appChartData: [(String,Double)] = []
+        
+       
         let totalActivityDuration = await data.flatMap { $0.activitySegments }.reduce(0, {
             $0 + $1.totalActivityDuration
         })
-        var totalPickups = 0
-        var longestActivity:DateInterval?
-        var firstPickup:Date?
-        var categories:[String] = []
-       
+        
+        
         for await d in data {
             for await a in d.activitySegments{
-                totalPickups = a.totalPickupsWithoutApplicationActivity
-                longestActivity = a.longestActivity
-                firstPickup = a.firstPickup
-                
-                
                 for await c in a.categories {
-                    categories.append((c.category.localizedDisplayName)!)
-                    for await ap in c.applications {
+                    let category = c.category
+                    let hash = c.hashValue
+                    let duration = c.totalActivityDuration
+                    let categoryActivity = CategoryDeviceActivity(id: hash, category: category.localizedDisplayName!, duration: duration, token: category.token!)
+                    categoryList.append(categoryActivity)
+                    
+                    for await ap in c.applications{
                         let appName = (ap.application.localizedDisplayName ?? "nil")
                         let bundle = (ap.application.bundleIdentifier ?? "nil")
                         if appName == bundle{
                             continue
+                        }
+                        
+                        let durationInMins = Double(ap.totalActivityDuration/60)
+                        if durationInMins > 1.0 {
+                            appChartData.append((appName, durationInMins))
                         }
                         
                         let duration = Int(ap.totalActivityDuration)
@@ -85,14 +83,35 @@ struct TotalActivityReport: DeviceActivityReportScene {
                         let numberOfPickups = ap.numberOfPickups
                         let notifs = ap.numberOfNotifications
                         let app = AppDeviceActivity(id: bundle, token: token, displayName: appName, duration: formatedDuration, durationInterval: durationInterval, numberOfPickups: numberOfPickups,category: category, numberOfNotifs: notifs)
-                        list.append(app)
+                        appList.append(app)
+                       
                     }
+                   
                 }
             }
         }
         
-        return ActivityReport(totalDuration: totalActivityDuration,totalPickupsWithoutApplicationActivity: totalPickups, longestActivity: longestActivity, firstPickup: firstPickup, categories: categories, apps: list)
+        appList.sort(by:sortApps)
+        categoryList.sort(by: sortCategories)
+        for cat in categoryList {
+            let durationInMins = Double(cat.duration/60)
+            if durationInMins > 2.0 {
+                categoryChartData.append((cat.category, durationInMins))
+            }
+        }
+        
+        
+        return ChartAndTopThreeReport(totalDuration: totalActivityDuration, categories: categoryList, categoryChartData: categoryChartData, appChartData:appChartData, topApps: [appList[0], appList[1], appList[2]])
     }
+    
+}
+
+func sortCategories(this:CategoryDeviceActivity, that:CategoryDeviceActivity) -> Bool {
+  return this.duration > that.duration
+}
+
+func sortApps(this:AppDeviceActivity, that:AppDeviceActivity) -> Bool {
+    return this.durationInterval > that.durationInterval
 }
 
 

@@ -12,18 +12,18 @@ import ManagedSettings
 import FirebaseCore
 
 
-class AppDelegate: NSObject, UIApplicationDelegate {
-  func application(_ application: UIApplication,
-                   didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-    FirebaseApp.configure()
-
-    return true
-  }
-}
+//class AppDelegate: NSObject, UIApplicationDelegate {
+//  func application(_ application: UIApplication,
+//                   didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+//    FirebaseApp.configure()
+//
+//    return true
+//  }
+//}
 
 @main
 struct ScreenBreakApp: App {
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    //@UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     let persistenceController = PersistenceController.shared
     let center = AuthorizationCenter.shared
     @StateObject var launchScreenManager = LaunchScreenManager()
@@ -31,7 +31,6 @@ struct ScreenBreakApp: App {
     @StateObject var store = ManagedSettingsStore()
     @State var show = false
     
-
     
     var body: some Scene {
         WindowGroup {
@@ -49,6 +48,13 @@ struct ScreenBreakApp: App {
                         do{
                             try await center.requestAuthorization(for: FamilyControlsMember.individual)
                             show = true
+//                            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+//                                if success {
+//                                    print("All set!")
+//                                } else if let error = error {
+//                                    print(error.localizedDescription)
+//                                }
+//                            }
                             
                         }catch{
                             //Handle error here

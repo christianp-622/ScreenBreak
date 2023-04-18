@@ -10,7 +10,7 @@ import DeviceActivity
 import RiveRuntime
 
 struct AppsView: View {
-    @State private var isLoaded = true
+    @AppStorage("hasViewedAppsPage") var hasViewed = false
     @State private var context: DeviceActivityReport.Context = .init(rawValue: "Total Activity")
     @State private var filter = DeviceActivityFilter(
         segment: .daily(
@@ -33,6 +33,7 @@ struct AppsView: View {
                 Color("backgroundColor")
                     .edgesIgnoringSafeArea(.all)
                 DeviceActivityReport(context, filter: filter)
+                
             }
         }
         .navigationViewStyle(.stack)

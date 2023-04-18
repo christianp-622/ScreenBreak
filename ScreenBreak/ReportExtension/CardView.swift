@@ -52,15 +52,15 @@ struct CardView: View {
                 Label(app.token)
                     .labelStyle(.iconOnly)
                     .frame(width:50, height:50)
-                    .shadow(radius: 2)
                     .scaleEffect(3)
                     .padding(4)
                     .mask(RoundedRectangle(cornerRadius: 8, style:.continuous))
-                        
+                    .shadow(color:Color("shadowColor").opacity(0.7), radius:5)
                     .overlay(
                         RoundedRectangle(cornerRadius: 8, style:.continuous)
                             .stroke(Color.borderColor, lineWidth: 2)
                        )
+                    
                     
                 Text(app.displayName)
                     .customFont(.subheadline2)
@@ -71,8 +71,9 @@ struct CardView: View {
             }
             .padding()
             .multilineTextAlignment(.center)
+            
         }
-        .frame(width: 100, height:100)
+        .frame(width: 90, height:60)
         .padding()
         .scaleEffect(tapped ? 1.4 : 1)
         .animation(.spring(response: 0.4, dampingFraction: 0.6))
@@ -98,44 +99,53 @@ struct CardView: View {
 struct CardViewPopup: View {
     let app: AppDeviceActivity
     var body: some View {
-        VStack{
-            Label(app.token)
-                .labelStyle(.iconOnly)
-                .shadow(radius: 5)
-                .scaleEffect(3)
-                .frame(width:50, height:50)
-            Text(app.displayName)
-                .customFont(.title2)
-            Spacer()
-            HStack {
-                Text("Application Category:")
-                    .customFont(.subheadline)
-                Text("\(app.category)")
-                    .customFont(.subheadline2)
-                }
-            Spacer()
-            HStack {
-                Text("Total Application Pickups:")
-                    .customFont(.subheadline)
-                Text("\(app.numberOfPickups)")
-                    .customFont(.subheadline2)
-                }
-            Spacer()
-            HStack {
-                Text("Total Number of Notifications:")
-                    .customFont(.subheadline)
-                Text("\(app.numberOfNotifs)")
-                    .customFont(.subheadline2)
-                }
-            Spacer()
-            HStack {
-                Text("Screen Time:")
-                    .customFont(.subheadline)
-                Text("\(app.duration)")
-                    .customFont(.subheadline2)
-                }
+        ZStack{
+            Color("backgroundColor").opacity(0.8)
+            VStack{
+                Label(app.token)
+                    .labelStyle(.iconOnly)
+                    .frame(width:50, height:50)
+                    .scaleEffect(3)
+                    .padding(4)
+                    .mask(RoundedRectangle(cornerRadius: 8, style:.continuous))
+                    .shadow(color:Color("shadowColor").opacity(0.7), radius:5)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 8, style:.continuous)
+                            .stroke(Color.borderColor, lineWidth: 2)
+                       )
+                Text(app.displayName)
+                    .customFont(.title2)
+                Spacer()
+                HStack {
+                    Text("Application Category:")
+                        .customFont(.subheadline)
+                    Text("\(app.category)")
+                        .customFont(.subheadline2)
+                    }
+                Spacer()
+                HStack {
+                    Text("Total Application Pickups:")
+                        .customFont(.subheadline)
+                    Text("\(app.numberOfPickups)")
+                        .customFont(.subheadline2)
+                    }
+                Spacer()
+                HStack {
+                    Text("Total Number of Notifications:")
+                        .customFont(.subheadline)
+                    Text("\(app.numberOfNotifs)")
+                        .customFont(.subheadline2)
+                    }
+                Spacer()
+                HStack {
+                    Text("Screen Time:")
+                        .customFont(.subheadline)
+                    Text("\(app.duration)")
+                        .customFont(.subheadline2)
+                    }
+            }
+            .fixedSize()
         }
-        .fixedSize()
         //.frame(width: .infinity, height: 200)
     }
 }

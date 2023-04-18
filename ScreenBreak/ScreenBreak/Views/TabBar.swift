@@ -49,7 +49,7 @@ struct TabBar: View {
             .overlay(
                 RoundedRectangle(cornerRadius: 24,style: .continuous)
                     .stroke(
-                        .linearGradient(colors:[.white.opacity(0.5), .white.opacity(0)],
+                        .linearGradient(colors:[.white.opacity(0.5), .white.opacity(0.4)],
                                         startPoint: .topLeading,
                                         endPoint:.bottomTrailing)
                            )

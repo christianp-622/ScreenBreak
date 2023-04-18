@@ -10,7 +10,6 @@ import SwiftUI
 
  struct TopThreeView: View {
      var topThreeReport: TopThreeReport
-     private let adaptiveColumns = [GridItem(.adaptive(minimum:50))]
      private let fixedColumns =  [GridItem(.fixed(100)), GridItem(.fixed(100)), GridItem(.fixed(100))]
      let colors = [Color.cyan, .indigo, .pink, .purple, .yellow, .teal]
      
