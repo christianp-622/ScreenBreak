@@ -95,6 +95,9 @@
 		48AE9A3229E240A10092766C /* sblogosmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 48AE9A2F29E240A10092766C /* sblogosmall.png */; };
 		48AE9A3329E240A10092766C /* sblogosmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 48AE9A2F29E240A10092766C /* sblogosmall.png */; };
 		48AE9A3A29E38FD90092766C /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48AE9A3929E38FD90092766C /* Colors.xcassets */; };
+		5845FF1429E6294700DF20AD /* FamilyPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5845FF1329E6294700DF20AD /* FamilyPickerView.swift */; };
+		5845FF1629E9C82D00DF20AD /* RestrictionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5845FF1529E9C82D00DF20AD /* RestrictionView.swift */; };
+		5845FF1829EB086E00DF20AD /* DurationPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5845FF1729EB086E00DF20AD /* DurationPickerView.swift */; };
 		DD69DAAB29D20C850024831D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD69DAAA29D20C850024831D /* GoogleService-Info.plist */; };
 		DD69DAAE29D20D290024831D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = DD69DAAD29D20D290024831D /* FirebaseAuth */; };
 		DD69DAC029D212560024831D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD69DABD29D212560024831D /* LoginView.swift */; };
@@ -231,6 +234,9 @@
 		48AE9A2629E22DEF0092766C /* shield.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = shield.entitlements; sourceTree = "<group>"; };
 		48AE9A2F29E240A10092766C /* sblogosmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sblogosmall.png; sourceTree = "<group>"; };
 		48AE9A3929E38FD90092766C /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		5845FF1329E6294700DF20AD /* FamilyPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyPickerView.swift; sourceTree = "<group>"; };
+		5845FF1529E9C82D00DF20AD /* RestrictionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestrictionView.swift; sourceTree = "<group>"; };
+		5845FF1729EB086E00DF20AD /* DurationPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationPickerView.swift; sourceTree = "<group>"; };
 		DD69DAAA29D20C850024831D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DD69DABD29D212560024831D /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		DD69DABE29D212560024831D /* SignInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
@@ -431,11 +437,14 @@
 				DD69DABE29D212560024831D /* SignInView.swift */,
 				488340AF29B80B1500910A27 /* AppsView.swift */,
 				488340B929B8198D00910A27 /* HomeView.swift */,
+				5845FF1529E9C82D00DF20AD /* RestrictionView.swift */,
 				488340B129B80B5100910A27 /* ConfigView.swift */,
+				5845FF1729EB086E00DF20AD /* DurationPickerView.swift */,
 				48AE9A1529DF316B0092766C /* LoadingAnimation.swift */,
 				488340B529B80D3500910A27 /* MoreInsightsView.swift */,
 				488340B729B8148700910A27 /* LeaderboardView.swift */,
 				4846CFB229CCA666005D018E /* ChartView.swift */,
+				5845FF1329E6294700DF20AD /* FamilyPickerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -744,14 +753,17 @@
 				48AE99F829DC7E6F0092766C /* CustomFont.swift in Sources */,
 				488340B629B80D3500910A27 /* MoreInsightsView.swift in Sources */,
 				481388FA29ABE0F6001B8A55 /* Persistence.swift in Sources */,
+				5845FF1429E6294700DF20AD /* FamilyPickerView.swift in Sources */,
 				488340BA29B8198D00910A27 /* HomeView.swift in Sources */,
 				48AE9A1629DF316B0092766C /* LoadingAnimation.swift in Sources */,
 				481388FD29ABE0F6001B8A55 /* ScreenBreak.xcdatamodeld in Sources */,
 				488340B829B8148700910A27 /* LeaderboardView.swift in Sources */,
+				5845FF1629E9C82D00DF20AD /* RestrictionView.swift in Sources */,
 				481388F329ABE0F2001B8A55 /* ContentView.swift in Sources */,
 				488340B029B80B1500910A27 /* AppsView.swift in Sources */,
 				488340BC29C8A80B00910A27 /* LaunchScreenView.swift in Sources */,
 				DD69DAC129D212560024831D /* SignInView.swift in Sources */,
+				5845FF1829EB086E00DF20AD /* DurationPickerView.swift in Sources */,
 				481388F129ABE0F2001B8A55 /* ScreenBreakApp.swift in Sources */,
 				488340BF29C8AE8F00910A27 /* LaunchScreenManager.swift in Sources */,
 				DDEEB70E29DB4560006FC9E5 /* CreateProfileView.swift in Sources */,

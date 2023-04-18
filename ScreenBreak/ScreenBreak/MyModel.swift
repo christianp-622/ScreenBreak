@@ -17,6 +17,7 @@ class MyModel: ObservableObject {
     //@EnvironmentObject var store: ManagedSettingsStore
     
     @Published var selectionToDiscourage: FamilyActivitySelection
+
     @Published var selectionToEncourage: FamilyActivitySelection
     
     init() {

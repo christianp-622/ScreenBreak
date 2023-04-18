@@ -22,6 +22,16 @@ struct AppsView: View {
         devices: .init([.iPhone, .iPad])
     )
     
+    @State private var weeklyFilter = DeviceActivityFilter(
+        segment: .weekly(
+            during: Calendar.current.dateInterval(
+               of: .day, for: .now
+            )!
+        ),
+        users: .all,
+        devices: .init([.iPhone, .iPad])
+    )
+    
     init() {
         // Allows us to make the navBarTitle appear in our custom font
         UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "Poppins-Bold", size: 40)!]
@@ -32,7 +42,7 @@ struct AppsView: View {
             ZStack{
                 Color("backgroundColor")
                     .edgesIgnoringSafeArea(.all)
-                DeviceActivityReport(context, filter: filter)
+                DeviceActivityReport(context, filter: weeklyFilter)
             }
         }
         .navigationViewStyle(.stack)

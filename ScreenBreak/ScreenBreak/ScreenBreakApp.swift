@@ -40,6 +40,8 @@ struct ScreenBreakApp: App {
                     if show {
                         ContentView().environmentObject(model)
                             .environmentObject(store)
+                            .environment(\.managedObjectContext,persistenceController.container.viewContext)
+                        
                     }else{
                         STProgressView()
                     }
@@ -49,6 +51,13 @@ struct ScreenBreakApp: App {
                         do{
                             try await center.requestAuthorization(for: FamilyControlsMember.individual)
                             show = true
+                            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+                                if success {
+                                    print("All set!")
+                                } else if let error = error {
+                                    print(error.localizedDescription)
+                                }
+                            }
                             
                         }catch{
                             //Handle error here

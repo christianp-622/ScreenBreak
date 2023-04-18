@@ -34,7 +34,8 @@ struct ContentView: View {
                 MoreInsightsView()
             }
             TabBar()
-        }.onAppear{
+        }
+        .onAppear{
             DispatchQueue
                 .main
                 .asyncAfter(deadline:.now() + 5){

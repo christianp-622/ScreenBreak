@@ -25,17 +25,22 @@ class MySchedule {
     static public func setSchedule(endHour: Int, endMins:Int) {
         print("Setting schedule...")
         print(("Hour is: ", Calendar.current.dateComponents([.hour, .minute], from: Date()).hour!))
+        
+        let year = Calendar.current.dateComponents([.year], from: Date()).year ?? 1
+        let month = Calendar.current.dateComponents([.month], from: Date()).month ?? 1
+        let day = Calendar.current.dateComponents([.day], from: Date()).day ?? 1
+        let dateComp = Calendar.current.dateComponents([.hour], from: Date())
         let hourComponents = Calendar.current.dateComponents([.hour], from: Date())
         let curHour = hourComponents.hour ?? 0
-        
         let minuteComponents = Calendar.current.dateComponents([.minute], from: Date())
         let curMins = minuteComponents.minute ?? 0
+        
         
         var nextMin = curMins + 2
         
         let notifCenter = UNUserNotificationCenter.current()
         
-        let startTrigger = UNCalendarNotificationTrigger(dateMatching: DateComponents(hour: curHour, minute: nextMin), repeats: false)
+        let startTrigger = UNCalendarNotificationTrigger(dateMatching: DateComponents(year: year, month: month, day: day, hour: curHour, minute: nextMin), repeats: false)
         let startContent = UNMutableNotificationContent()
         startContent.title = "Screen Break"
         startContent.body = "You've entered Restriction Mode! Good Luck!"
@@ -60,7 +65,7 @@ class MySchedule {
         let halfRequest = UNNotificationRequest(identifier: UUID().uuidString, content: halfContent, trigger: halfTrigger)
         notifCenter.add(halfRequest)*/
         
-        let endTrigger = UNCalendarNotificationTrigger(dateMatching: DateComponents(hour: endHour, minute: endMins), repeats: false)
+        let endTrigger = UNCalendarNotificationTrigger(dateMatching: DateComponents(year: year, month: month, day: day, hour: endHour, minute: endMins), repeats: false)
         let endContent = UNMutableNotificationContent()
         endContent.title = "Screen Break"
         endContent.body = "Congrats! You've reached the end of Restriction Mode"
