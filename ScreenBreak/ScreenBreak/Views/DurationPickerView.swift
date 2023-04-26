@@ -31,7 +31,7 @@ struct DurationPickerView: View {
                     .foregroundColor(.gray.opacity(0.7))
                     .cornerRadius(10)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-                // Time Options: 30mins, 1 hour, 1 hour 30mins, 2 hours, 2.5 hours, 3 hours, End Of Day
+                // Time Options: 15 mins, 30mins, 1 hour, 1 hour 30mins, 2 hours, 2.5 hours, 3 hours, End Of Day
                 Picker("Select Your Restriction Time", selection: $restrictionDuration) {
                     ForEach(["15 mins","30 mins", "1 hour", "1 hour 30 mins", "2 hours", "2 hours 30 mins", "3 hours", "Rest Of Day"], id: \.self) { time in
                         Text("\(time)")

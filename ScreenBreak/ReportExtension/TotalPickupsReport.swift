@@ -70,8 +70,10 @@ struct TotalPickupsReport: DeviceActivityReportScene {
         }
         
         // Format date for chart
-        let pChartData = makePickUpsCharData(appList: appList)
-        let nChartData = makeNotifsChartData(appList: appList)
+        let pChartData = makePickUpsCategoryChartData(appList: appList)
+        let nChartData = makeNotifsCategoryChartData(appList: appList)
+        let pAppChartData = makePickUpsAppChartData(appList:appList)
+        let nAppChartData = makeNotifsAppChartData(appList: appList)
         
         // Gives us an understandable string representation of first pickup
         let formatter = DateFormatter()
@@ -88,7 +90,9 @@ struct TotalPickupsReport: DeviceActivityReportScene {
                                   totalPickupsWithoutApplicationActivity: totalPickupsWithout,
                                   longestActivity: formatter2.string(for: longestActivity),
                                   pickupsChartData: pChartData,
-                                  notifsChartData: nChartData)
+                                  notifsChartData: nChartData,
+                                  pickupsAppChartData: pAppChartData,
+                                  notifsAppChartData:nAppChartData)
     }
     
     func formatDuration(duration:Int) -> String{
@@ -117,7 +121,7 @@ struct TotalPickupsReport: DeviceActivityReportScene {
         return formatedDuration
     }
     
-    func makePickUpsCharData(appList: [AppDeviceActivity]) -> [(String, Double)] {
+    func makePickUpsCategoryChartData(appList: [AppDeviceActivity]) -> [(String, Double)] {
         let categoriesWithPickups = appList.reduce(into: [(String, Double)]()) { result, element in
             let category = element.category
             let pickups = element.numberOfPickups
@@ -125,14 +129,40 @@ struct TotalPickupsReport: DeviceActivityReportScene {
             if let index = result.firstIndex(where: { $0.0 == category }) {
                 result[index].1 += Double(pickups)
             } else {
-                result.append((category, Double(pickups)))
+                if pickups > 0 {
+                    result.append((category, Double(pickups)))
+                }
             }
         }
         
         return categoriesWithPickups
     }
     
-    func makeNotifsChartData(appList: [AppDeviceActivity]) -> [(String, Double)] {
+    func makePickUpsAppChartData(appList: [AppDeviceActivity]) -> [(String, Double)] {
+        let appsWithPickups = appList.reduce(into: [(String, Double)]()) { result, element in
+            let app = element.displayName
+            let pickups = element.numberOfPickups
+            
+            if pickups > 0{
+                result.append((app, Double(pickups)))
+            }
+            
+        }
+        return appsWithPickups
+    }
+    func makeNotifsAppChartData(appList: [AppDeviceActivity]) -> [(String, Double)] {
+        let appsWithNotifs = appList.reduce(into: [(String, Double)]()) { result, element in
+            let app = element.displayName
+            let notifs = element.numberOfNotifs
+            if notifs > 0 {
+                result.append((app, Double(notifs)))
+            }
+        }
+        
+        return appsWithNotifs
+    }
+    
+    func makeNotifsCategoryChartData(appList: [AppDeviceActivity]) -> [(String, Double)] {
         let categoriesWithNotifs = appList.reduce(into: [(String, Double)]()) { result, element in
             let category = element.category
             let notifs = element.numberOfNotifs
@@ -140,7 +170,9 @@ struct TotalPickupsReport: DeviceActivityReportScene {
             if let index = result.firstIndex(where: { $0.0 == category }) {
                 result[index].1 += Double(notifs)
             } else {
-                result.append((category, Double(notifs)))
+                if notifs > 0{
+                    result.append((category, Double(notifs)))
+                }
             }
         }
         

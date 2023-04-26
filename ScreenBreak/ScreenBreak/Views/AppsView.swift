@@ -11,7 +11,7 @@ import RiveRuntime
 
 struct AppsView: View {
     @AppStorage("hasViewedAppsPage") var hasViewed = false
-    @State private var context: DeviceActivityReport.Context = .init(rawValue: "Total Activity")
+    @State private var appsContext: DeviceActivityReport.Context = .init(rawValue: "Total Activity")
     @State private var filter = DeviceActivityFilter(
         segment: .daily(
             during: Calendar.current.dateInterval(
@@ -32,7 +32,7 @@ struct AppsView: View {
             ZStack{
                 Color("backgroundColor")
                     .edgesIgnoringSafeArea(.all)
-                DeviceActivityReport(context, filter: filter)
+                DeviceActivityReport(appsContext, filter: filter)
                 
             }
         }

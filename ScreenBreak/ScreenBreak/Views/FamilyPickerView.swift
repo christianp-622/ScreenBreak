@@ -23,11 +23,11 @@ struct FamilyPickerView: View {
             Spacer()
             Text("App Selection")
                 .customFont(.title)
-                .foregroundColor(.white)
                 .fontWeight(.bold)
                 .font(.body)
             Spacer()
             Text("Select apps to lock during Restriction Mode.")
+                .customFont(.headline)
                 .multilineTextAlignment(.center)
             Spacer()
             ZStack(alignment: .center) {
@@ -36,7 +36,10 @@ struct FamilyPickerView: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 FamilyActivityPicker(selection: $model.selectionToDiscourage)
                     .padding(.all, 10)
+                    
             }
+            
+            
             Spacer()
             Button(action : {
                 if(MyModel.shared.selectionToDiscourage.applicationTokens.count == 0 && MyModel.shared.selectionToDiscourage.categoryTokens.count == 0) {
@@ -52,6 +55,7 @@ struct FamilyPickerView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .padding(EdgeInsets(top: 8, leading: 15, bottom: 20, trailing: 15))
         .foregroundColor(.white)
+        
         .interactiveDismissDisabled()
         .alert(isPresented: $noAppsAlert) {
             Alert(

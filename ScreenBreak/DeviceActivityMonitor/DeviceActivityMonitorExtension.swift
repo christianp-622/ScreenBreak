@@ -24,6 +24,7 @@ class DeviceActivityMonitorExtension: DeviceActivityMonitor {
     override func intervalDidEnd(for activity: DeviceActivityName) {
         super.intervalDidEnd(for: activity)
         store.shield.applications = nil
+        store.shield.applicationCategories = nil
         // Handle the end of the interval.
     }
     

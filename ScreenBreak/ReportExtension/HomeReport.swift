@@ -36,9 +36,15 @@ struct HomeReport: DeviceActivityReportScene {
                 for await c in a.categories {
                     let category = c.category
                     let hash = c.hashValue
-                    let duration = c.totalActivityDuration
-                    let categoryActivity = CategoryDeviceActivity(id: hash, category: category.localizedDisplayName!, duration: duration, token: category.token!)
-                    categoryList.append(categoryActivity)
+                    let catDurationInMins = c.totalActivityDuration/60
+                    
+                    if catDurationInMins > 2.0{
+                        categoryChartData.append((category.localizedDisplayName!, catDurationInMins))
+                    }
+                    
+//                    let categoryActivity = CategoryDeviceActivity(id: hash, category: category.localizedDisplayName!, duration: duration, token: category.token!)
+//
+//                    categoryList.append(categoryActivity)
                     
                     for await ap in c.applications{
                         let appName = (ap.application.localizedDisplayName ?? "nil")
@@ -48,7 +54,7 @@ struct HomeReport: DeviceActivityReportScene {
                         }
                         
                         let durationInMins = Double(ap.totalActivityDuration/60)
-                        if durationInMins > 1.0 {
+                        if durationInMins > 2.0 {
                             appChartData.append((appName, durationInMins))
                         }
                         
@@ -57,28 +63,7 @@ struct HomeReport: DeviceActivityReportScene {
                         let category = c.category.localizedDisplayName!
                         let token = ap.application.token!
                         
-                        let numberOfHours = duration / 3600
-                        let numberOfMins = (duration % 3600) / 60
-                        var formatedDuration = ""
-                        if numberOfHours == 0 {
-                            if numberOfMins != 1{
-                                formatedDuration = "\(numberOfMins)mins"
-                            }else{
-                                formatedDuration = "\(numberOfMins)min"
-                            }
-                        }else if numberOfHours == 1{
-                            if numberOfMins != 1{
-                                formatedDuration = "\(numberOfHours)hr \(numberOfMins)mins"
-                            }else{
-                                formatedDuration = "\(numberOfHours)hr \(numberOfMins)min"
-                            }
-                        }else{
-                            if numberOfMins != 1{
-                                formatedDuration = "\(numberOfHours)hrs \(numberOfMins)mins"
-                            }else{
-                                formatedDuration = "\(numberOfHours)hrs \(numberOfMins)min"
-                            }
-                        }
+                        let formatedDuration = formatDuration(duration:duration)
                        
                         let numberOfPickups = ap.numberOfPickups
                         let notifs = ap.numberOfNotifications
@@ -92,18 +77,37 @@ struct HomeReport: DeviceActivityReportScene {
         }
         
         appList.sort(by:sortApps)
-        categoryList.sort(by: sortCategories)
-        for cat in categoryList {
-            let durationInMins = Double(cat.duration/60)
-            if durationInMins > 2.0 {
-                categoryChartData.append((cat.category, durationInMins))
-            }
-        }
         
         
-        return ChartAndTopThreeReport(totalDuration: totalActivityDuration, categories: categoryList, categoryChartData: categoryChartData, appChartData:appChartData, topApps: [appList[0], appList[1], appList[2]])
+        return ChartAndTopThreeReport(totalDuration: totalActivityDuration, categoryChartData: categoryChartData, appChartData:appChartData, topApps: [appList[0], appList[1], appList[2]])
     }
     
+}
+
+func formatDuration(duration:Int) -> String{
+    let numberOfHours = duration / 3600
+    let numberOfMins = (duration % 3600) / 60
+    var formatedDuration = ""
+    if numberOfHours == 0 {
+        if numberOfMins != 1{
+            formatedDuration = "\(numberOfMins)mins"
+        }else{
+            formatedDuration = "\(numberOfMins)min"
+        }
+    }else if numberOfHours == 1{
+        if numberOfMins != 1{
+            formatedDuration = "\(numberOfHours)hr \(numberOfMins)mins"
+        }else{
+            formatedDuration = "\(numberOfHours)hr \(numberOfMins)min"
+        }
+    }else{
+        if numberOfMins != 1{
+            formatedDuration = "\(numberOfHours)hrs \(numberOfMins)mins"
+        }else{
+            formatedDuration = "\(numberOfHours)hrs \(numberOfMins)min"
+        }
+    }
+    return formatedDuration
 }
 
 func sortCategories(this:CategoryDeviceActivity, that:CategoryDeviceActivity) -> Bool {

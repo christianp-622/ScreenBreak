@@ -14,7 +14,7 @@ import ManagedSettings
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
-    @AppStorage("selectedTab") var selectedTab: Tab = .home
+    @AppStorage("selectedTab") var selectedTab: Tab = .star
     @AppStorage("showOnboarding") var showOnboarding = true
     @AppStorage("firstTime") var firstTime = true
     @EnvironmentObject var launchScreenManager: LaunchScreenManager
@@ -29,7 +29,7 @@ struct ContentView: View {
             case .star:
                 AppsView()
             case .timer:
-                ConfigView()
+                ConfigRestrictionsView()
             case .search:
                 MoreInsightsView()
             }

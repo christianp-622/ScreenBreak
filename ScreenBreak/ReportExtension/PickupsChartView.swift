@@ -17,24 +17,62 @@ struct PickupsChartView: View {
             Color("backgroundColor").edgesIgnoringSafeArea(.all)
             ScrollView{
                 VStack{
-                    Text("Total Pickups Per Category")
-                        .customFont(.title3)
+                    
+                    TabView{
+                        VStack{
+                            Text("Category Pickups")
+                                .customFont(.headline)
+                                .underline()
+                            BarChartView(data: ChartData(values: moreInsightsReport.pickupsChartData), title: "Pickups",legend: "Pickups", style: Styles.barChartMidnightGreenLight,form:ChartForm.extraLarge,dropShadow:true, cornerImage:Image(systemName:"hand.tap"))
+                                
+                        }
+                        VStack{
+                            Text("Category Notifications")
+                                .customFont(.headline)
+                                .underline()
+                            BarChartView(data: ChartData(values: moreInsightsReport.notifsChartData), title: "Notifications", legend: "Notifications",style: Styles.barChartStyleNeonBlueLight,form:ChartForm.extraLarge ,dropShadow:true, cornerImage:Image(systemName:"message.badge"))
+                                
+                        }
                         
-                    BarChartView(data: ChartData(values: moreInsightsReport.pickupsChartData), title: "Pickups", legend: "By Category", style: Styles.barChartStyleOrangeLight, form: ChartForm.extraLarge)
-                    Text("Total Notifications Per Category")
-                        .customFont(.title3)
-                        
-                    BarChartView(data: ChartData(values: moreInsightsReport.notifsChartData), title: "Notifications", legend: "By Category", style: Styles.barChartMidnightGreenLight, form: ChartForm.extraLarge)
+                    }
+                    .frame(height:320)
+                    .padding(.bottom)
+                    .tabViewStyle(.page)
+                    .indexViewStyle(
+                        .page(backgroundDisplayMode:
+                                .always))
+              
+                    
+                    TabView{
+                        VStack{
+                            Text("Application Pickups")
+                                .customFont(.headline)
+                                .underline()
+                            BarChartView(data: ChartData(values: moreInsightsReport.pickupsAppChartData), title: "Pickups",legend: "Pickups", style: Styles.barChartMidnightGreenLight,form:ChartForm.extraLarge,dropShadow:true, cornerImage:Image(systemName:"hand.tap"))
+                            }
+                        VStack{
+                            Text("Application Notifications")
+                                .customFont(.headline)
+                                .underline()
+                            BarChartView(data: ChartData(values: moreInsightsReport.notifsAppChartData), title: "Notifications", legend: "Notifications",style: Styles.barChartStyleNeonBlueLight,form:ChartForm.extraLarge ,dropShadow:true, cornerImage:Image(systemName:"message.badge"))
+                        }
+                    }
+                    .frame(height:320)
+                    .padding(.bottom)
+                    .tabViewStyle(.page)
+                    .indexViewStyle(
+                        .page(backgroundDisplayMode:
+                                .always))
+                    RoundedRectangle(cornerRadius: 2).frame(width:UIScreen.main.bounds.width * 0.9, height: 3)
+
                     Text("First Pickup: \n\(moreInsightsReport.firstPickup)")
-                        .customFont(.title3)
-                       
-                    Text("Longest Activity: \n\(moreInsightsReport.longestActivity ??  "-")")
                         .customFont(.title3)
                         
                     Text("Mindless Device Pickups: \n \(moreInsightsReport.totalPickupsWithoutApplicationActivity)")
                         .customFont(.title3)
                         
-                    Spacer().frame(height:80)
+                    Spacer()
+                        .frame(height:80)
                 }
                 .padding(5)
                 .multilineTextAlignment(.center)

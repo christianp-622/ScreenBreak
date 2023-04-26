@@ -12,7 +12,7 @@ import DeviceActivity
 
 struct HomeView: View {
     
-    @State private var categoryContext: DeviceActivityReport.Context = .init(rawValue: "Home Report")
+    @State private var homeContext: DeviceActivityReport.Context = .init(rawValue: "Home Report")
     @State private var filter = DeviceActivityFilter(
         segment: .daily(
             during: Calendar.current.dateInterval(
@@ -25,7 +25,6 @@ struct HomeView: View {
     
     @EnvironmentObject var model: MyModel
     let button = RiveViewModel(fileName: "button")
-    @State private var isDiscouragedPresented = false
     
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "Poppins-Bold", size: 40)!]
@@ -40,7 +39,7 @@ struct HomeView: View {
                     .edgesIgnoringSafeArea(.all)
                 VStack {
                     
-                    DeviceActivityReport(categoryContext, filter: filter)
+                    DeviceActivityReport(homeContext, filter: filter)
                     Spacer(minLength:60)
                     
                 }

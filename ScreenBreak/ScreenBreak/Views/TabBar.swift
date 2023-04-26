@@ -9,7 +9,7 @@ import SwiftUI
 import RiveRuntime
 
 struct TabBar: View {
-    @AppStorage("selectedTab") var selectedTab: Tab = .home
+    @AppStorage("selectedTab") var selectedTab: Tab = .star
     let icon = RiveViewModel(fileName: "icons", stateMachineName: "CHAT_Interactivity", artboardName: "CHAT")
     var body: some View {
         VStack{

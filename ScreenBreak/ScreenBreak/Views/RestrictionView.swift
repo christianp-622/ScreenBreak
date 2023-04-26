@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct RestrictionView: View {
     @Environment(\.dismiss) var dismiss
@@ -35,7 +36,7 @@ struct RestrictionView: View {
                     }.frame(maxWidth: .infinity, alignment: .leading)
                     HStack{
                         Button("Start Restrictions") {
-                            if(MyModel.shared.selectionToDiscourage.applicationTokens.count == 0) {
+                            if(MyModel.shared.selectionToDiscourage.applicationTokens.count == 0 && MyModel.shared.selectionToDiscourage.categoryTokens.count == 0) {
                                 noAppsAlert = true
                                 maxAppsAlert = false
                             } else if(MyModel.shared.selectionToDiscourage.applicationTokens.count >= 20) {
@@ -44,7 +45,15 @@ struct RestrictionView: View {
                             } else {
                                 noAppsAlert = false
                                 maxAppsAlert = false
-                                self.restrictionModel.inRestrictionMode = true
+                                UserDefaults.standard.set(true, forKey: "inRestrictionMode")
+                                UserDefaults(suiteName:"group.ChristianPichardo.ScreenBreak")!.set(true, forKey:"widgetInRestrictionMode")
+                                print("APPS SELECTED : \(MyModel.shared.selectionToDiscourage.applications.count)")
+                                for i in MyModel.shared.selectionToDiscourage.applications {
+                                    print(i)
+                                    MyModel.shared.addApp(name:i.localizedDisplayName ?? "Temp")
+                                }
+                                
+                                //UserDefaults.standard.set(MyModel.shared.selectionToDiscourage.categoryTokens, forKey: "lockedCategorie")
                                 let hourComponents = Calendar.current.dateComponents([.hour], from: Date())
                                 let curHour = hourComponents.hour ?? 0
                                 
@@ -57,39 +66,56 @@ struct RestrictionView: View {
                                 switch restrictionDuration {
                                 case "15 mins":
                                     let endTime = getEndTime(hourDuration: 0, minuteDuration: 15)
-                                    self.restrictionModel.endHour = endTime[0]
-                                    self.restrictionModel.endMins = endTime[1]
+                                    UserDefaults.standard.set(endTime[0], forKey: "endHour")
+                                    UserDefaults.standard.set(endTime[1], forKey: "endMins")
+                                    UserDefaults(suiteName:"group.ChristianPichardo.ScreenBreak")!.set(endTime[0], forKey:"widgetEndHour")
+                                    UserDefaults(suiteName:"group.ChristianPichardo.ScreenBreak")!.set(endTime[1], forKey:"widgetEndMins")
                                 case "30 mins":
                                     let endTime = getEndTime(hourDuration: 0, minuteDuration: 30)
-                                    self.restrictionModel.endHour = endTime[0]
-                                    self.restrictionModel.endMins = endTime[1]
+                                    UserDefaults.standard.set(endTime[0], forKey: "endHour")
+                                    UserDefaults.standard.set(endTime[1], forKey: "endMins")
+                                    UserDefaults(suiteName:"group.ChristianPichardo.ScreenBreak")!.set(endTime[0], forKey:"widgetEndHour")
+                                    UserDefaults(suiteName:"group.ChristianPichardo.ScreenBreak")!.set(endTime[1], forKey:"widgetEndMins")
                                 case "1 hour":
                                     let endTime = getEndTime(hourDuration: 1, minuteDuration: 0)
-                                    self.restrictionModel.endHour = endTime[0]
-                                    self.restrictionModel.endMins = endTime[1]
+                                    UserDefaults.standard.set(endTime[0], forKey: "endHour")
+                                    UserDefaults.standard.set(endTime[1], forKey: "endMins")
+                                    UserDefaults(suiteName:"group.ChristianPichardo.ScreenBreak")!.set(endTime[0], forKey:"widgetEndHour")
+                                    UserDefaults(suiteName:"group.ChristianPichardo.ScreenBreak")!.set(endTime[1], forKey:"widgetEndMins")
                                 case "1 hour 30 mins":
                                     let endTime = getEndTime(hourDuration: 1, minuteDuration: 30)
-                                    self.restrictionModel.endHour = endTime[0]
-                                    self.restrictionModel.endMins = endTime[1]
+                                    UserDefaults.standard.set(endTime[0], forKey: "endHour")
+                                    UserDefaults.standard.set(endTime[1], forKey: "endMins")
+                                    UserDefaults(suiteName:"group.ChristianPichardo.ScreenBreak")!.set(endTime[0], forKey:"widgetEndHour")
+                                    UserDefaults(suiteName:"group.ChristianPichardo.ScreenBreak")!.set(endTime[1], forKey:"widgetEndMins")
                                 case "2 hours":
                                     let endTime = getEndTime(hourDuration: 2, minuteDuration: 0)
-                                    self.restrictionModel.endHour = endTime[0]
-                                    self.restrictionModel.endMins = endTime[1]
+                                    UserDefaults.standard.set(endTime[0], forKey: "endHour")
+                                    UserDefaults.standard.set(endTime[1], forKey: "endMins")
+                                    UserDefaults(suiteName:"group.ChristianPichardo.ScreenBreak")!.set(endTime[0], forKey:"widgetEndHour")
+                                    UserDefaults(suiteName:"group.ChristianPichardo.ScreenBreak")!.set(endTime[1], forKey:"widgetEndMins")
                                 case "2 hours 30 mins":
                                     let endTime = getEndTime(hourDuration: 2, minuteDuration: 30)
-                                    self.restrictionModel.endHour = endTime[0]
-                                    self.restrictionModel.endMins = endTime[1]
+                                    UserDefaults.standard.set(endTime[0], forKey: "endHour")
+                                    UserDefaults.standard.set(endTime[1], forKey: "endMins")
+                                    UserDefaults(suiteName:"group.ChristianPichardo.ScreenBreak")!.set(endTime[0], forKey:"widgetEndHour")
+                                    UserDefaults(suiteName:"group.ChristianPichardo.ScreenBreak")!.set(endTime[1], forKey:"widgetEndMins")
                                 case "3 hours":
                                     let endTime = getEndTime(hourDuration: 3, minuteDuration: 0)
-                                    self.restrictionModel.endHour = endTime[0]
-                                    self.restrictionModel.endMins = endTime[1]
+                                    UserDefaults.standard.set(endTime[0], forKey: "endHour")
+                                    UserDefaults.standard.set(endTime[1], forKey: "endMins")
+                                    UserDefaults(suiteName:"group.ChristianPichardo.ScreenBreak")!.set(endTime[0], forKey:"widgetEndHour")
+                                    UserDefaults(suiteName:"group.ChristianPichardo.ScreenBreak")!.set(endTime[1], forKey:"widgetEndMins")
                                 case "Rest of Day":
-                                    self.restrictionModel.endHour = 23
-                                    self.restrictionModel.endMins = 59
+                                    UserDefaults.standard.set(23, forKey: "endHour")
+                                    UserDefaults.standard.set(59, forKey: "endMins")
+                                    UserDefaults(suiteName:"group.ChristianPichardo.ScreenBreak")!.set(23, forKey:"widgetEndHour")
+                                    UserDefaults(suiteName:"group.ChristianPichardo.ScreenBreak")!.set(59, forKey:"widgetEndMins")
                                 default:
                                     print("Have you done something new?")
                                 }
-                                MySchedule.setSchedule(endHour: self.restrictionModel.endHour, endMins: self.restrictionModel.endMins)
+                                WidgetCenter.shared.reloadAllTimelines()
+                                MySchedule.setSchedule(endHour: UserDefaults.standard.integer(forKey: "endHour"), endMins: UserDefaults.standard.integer(forKey: "endMins"))
                                 dismiss()
                             }
                         }.foregroundColor(.blue)
@@ -164,6 +190,26 @@ struct RestrictionView: View {
                                 .frame(width: 100, height:100)
                                 .padding()
                             }
+                            ForEach(Array(MyModel.shared.selectionToDiscourage.categoryTokens), id: \.self) { app in
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 25, style: .continuous)
+                                        .fill(.clear)
+                                        .shadow(radius: 10)
+                                        .shadow(radius: 10)
+                                    VStack {
+                                        Label(app)
+                                            .labelStyle(.iconOnly)
+                                            .shadow(radius: 2)
+                                            .scaleEffect(3)
+                                            .frame(width:50, height:50)
+                                        
+                                    }
+                                    .padding()
+                                    .multilineTextAlignment(.center)
+                                }
+                                .frame(width: 100, height:100)
+                                .padding()
+                            }
                         }.padding()
                     }.frame(width: UIScreen.main.bounds.width * 0.9, height:200)
                 }
@@ -183,7 +229,6 @@ func getEndTime(hourDuration: Int, minuteDuration: Int) -> [Int] {
     
     let minuteComponents = Calendar.current.dateComponents([.minute], from: Date())
     let curMins = minuteComponents.minute ?? 0
-        
     
     var endMins = minuteDuration + curMins
     var endHour = hourDuration + curHour

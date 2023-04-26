@@ -16,7 +16,6 @@
 		4813890729ABE0F6001B8A55 /* ScreenBreakTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4813890629ABE0F6001B8A55 /* ScreenBreakTests.swift */; };
 		4813891129ABE0F6001B8A55 /* ScreenBreakUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4813891029ABE0F6001B8A55 /* ScreenBreakUITests.swift */; };
 		4813891329ABE0F6001B8A55 /* ScreenBreakUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4813891229ABE0F6001B8A55 /* ScreenBreakUITestsLaunchTests.swift */; };
-		4846CFB329CCA666005D018E /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4846CFB229CCA666005D018E /* ChartView.swift */; };
 		4846CFBD29D1039E005D018E /* ReportExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4846CFBC29D1039E005D018E /* ReportExtension.swift */; };
 		4846CFBF29D1039E005D018E /* TotalActivityReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4846CFBE29D1039E005D018E /* TotalActivityReport.swift */; };
 		4846CFC129D1039E005D018E /* TotalActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4846CFC029D1039E005D018E /* TotalActivityView.swift */; };
@@ -53,7 +52,7 @@
 		4846D00F29D73130005D018E /* icons.riv in Resources */ = {isa = PBXBuildFile; fileRef = 4846CFFB29D73130005D018E /* icons.riv */; };
 		4846D01029D73130005D018E /* icons.riv in Resources */ = {isa = PBXBuildFile; fileRef = 4846CFFB29D73130005D018E /* icons.riv */; };
 		488340B029B80B1500910A27 /* AppsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488340AF29B80B1500910A27 /* AppsView.swift */; };
-		488340B229B80B5100910A27 /* ConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488340B129B80B5100910A27 /* ConfigView.swift */; };
+		488340B229B80B5100910A27 /* ConfigRestrictionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488340B129B80B5100910A27 /* ConfigRestrictionsView.swift */; };
 		488340B429B80CE800910A27 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488340B329B80CE800910A27 /* TabBar.swift */; };
 		488340B629B80D3500910A27 /* MoreInsightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488340B529B80D3500910A27 /* MoreInsightsView.swift */; };
 		488340B829B8148700910A27 /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488340B729B8148700910A27 /* LeaderboardView.swift */; };
@@ -109,6 +108,8 @@
 		48AE9AA429EB663B0092766C /* DurationPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE9AA329EB663A0092766C /* DurationPickerView.swift */; };
 		48AE9AA629EB66490092766C /* RestrictionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE9AA529EB66490092766C /* RestrictionView.swift */; };
 		48AE9AA829EB665B0092766C /* FamilyPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE9AA729EB665B0092766C /* FamilyPickerView.swift */; };
+		48AE9AAA29F5FEE80092766C /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE99F729DC7E6F0092766C /* CustomFont.swift */; };
+		48AE9AAD29F81CAF0092766C /* ApplicationsContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 48AE9AAB29F81CAF0092766C /* ApplicationsContainer.xcdatamodeld */; };
 		DD69DAAB29D20C850024831D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD69DAAA29D20C850024831D /* GoogleService-Info.plist */; };
 		DD69DAAE29D20D290024831D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = DD69DAAD29D20D290024831D /* FirebaseAuth */; };
 		DD69DAC029D212560024831D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD69DABD29D212560024831D /* LoginView.swift */; };
@@ -203,7 +204,6 @@
 		4813891029ABE0F6001B8A55 /* ScreenBreakUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenBreakUITests.swift; sourceTree = "<group>"; };
 		4813891229ABE0F6001B8A55 /* ScreenBreakUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenBreakUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4846CF9C29CCA40C005D018E /* DeviceActivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DeviceActivity.framework; path = System/Library/Frameworks/DeviceActivity.framework; sourceTree = SDKROOT; };
-		4846CFB229CCA666005D018E /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		4846CFB429CCB2C4005D018E /* ScreenBreak.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ScreenBreak.entitlements; sourceTree = "<group>"; };
 		4846CFBA29D1039E005D018E /* ReportExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = ReportExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		4846CFBC29D1039E005D018E /* ReportExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportExtension.swift; sourceTree = "<group>"; };
@@ -229,7 +229,7 @@
 		4846CFFA29D73130005D018E /* button.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = button.riv; sourceTree = "<group>"; };
 		4846CFFB29D73130005D018E /* icons.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = icons.riv; sourceTree = "<group>"; };
 		488340AF29B80B1500910A27 /* AppsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsView.swift; sourceTree = "<group>"; };
-		488340B129B80B5100910A27 /* ConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigView.swift; sourceTree = "<group>"; };
+		488340B129B80B5100910A27 /* ConfigRestrictionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigRestrictionsView.swift; sourceTree = "<group>"; };
 		488340B329B80CE800910A27 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		488340B529B80D3500910A27 /* MoreInsightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInsightsView.swift; sourceTree = "<group>"; };
 		488340B729B8148700910A27 /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
@@ -267,6 +267,8 @@
 		48AE9AA329EB663A0092766C /* DurationPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DurationPickerView.swift; sourceTree = "<group>"; };
 		48AE9AA529EB66490092766C /* RestrictionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestrictionView.swift; sourceTree = "<group>"; };
 		48AE9AA729EB665B0092766C /* FamilyPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FamilyPickerView.swift; sourceTree = "<group>"; };
+		48AE9AA929F5F84A0092766C /* SBWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SBWidgetExtension.entitlements; sourceTree = "<group>"; };
+		48AE9AAC29F81CAF0092766C /* ApplicationsContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ApplicationsContainer.xcdatamodel; sourceTree = "<group>"; };
 		DD69DAAA29D20C850024831D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DD69DABD29D212560024831D /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		DD69DABE29D212560024831D /* SignInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 		481388E429ABE0F1001B8A55 = {
 			isa = PBXGroup;
 			children = (
+				48AE9AA929F5F84A0092766C /* SBWidgetExtension.entitlements */,
 				481388EF29ABE0F2001B8A55 /* ScreenBreak */,
 				4813890529ABE0F6001B8A55 /* ScreenBreakTests */,
 				4813890F29ABE0F6001B8A55 /* ScreenBreakUITests */,
@@ -378,6 +381,7 @@
 				4846CFF429D73130005D018E /* RiveAssets */,
 				481388F929ABE0F6001B8A55 /* Persistence.swift */,
 				4846CFCF29D1E888005D018E /* MyModel.swift */,
+				48AE9AAB29F81CAF0092766C /* ApplicationsContainer.xcdatamodeld */,
 				48AE99F729DC7E6F0092766C /* CustomFont.swift */,
 				4846CFD129D1E8E0005D018E /* MySchedule.swift */,
 				488340BE29C8AE8F00910A27 /* LaunchScreenManager.swift */,
@@ -484,11 +488,10 @@
 				DD69DABE29D212560024831D /* SignInView.swift */,
 				488340AF29B80B1500910A27 /* AppsView.swift */,
 				488340B929B8198D00910A27 /* HomeView.swift */,
-				488340B129B80B5100910A27 /* ConfigView.swift */,
+				488340B129B80B5100910A27 /* ConfigRestrictionsView.swift */,
 				48AE9A1529DF316B0092766C /* LoadingAnimation.swift */,
 				488340B529B80D3500910A27 /* MoreInsightsView.swift */,
 				488340B729B8148700910A27 /* LeaderboardView.swift */,
-				4846CFB229CCA666005D018E /* ChartView.swift */,
 				48AE9AA529EB66490092766C /* RestrictionView.swift */,
 				48AE9AA729EB665B0092766C /* FamilyPickerView.swift */,
 				48AE9AA329EB663A0092766C /* DurationPickerView.swift */,
@@ -833,13 +836,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				488340B229B80B5100910A27 /* ConfigView.swift in Sources */,
+				488340B229B80B5100910A27 /* ConfigRestrictionsView.swift in Sources */,
 				48AE9AA629EB66490092766C /* RestrictionView.swift in Sources */,
 				4846CFD029D1E888005D018E /* MyModel.swift in Sources */,
 				48AE9AA429EB663B0092766C /* DurationPickerView.swift in Sources */,
 				DD69DAC229D212560024831D /* RegisterView.swift in Sources */,
 				4846CFD229D1E8E0005D018E /* MySchedule.swift in Sources */,
-				4846CFB329CCA666005D018E /* ChartView.swift in Sources */,
 				48AE99F829DC7E6F0092766C /* CustomFont.swift in Sources */,
 				488340B629B80D3500910A27 /* MoreInsightsView.swift in Sources */,
 				481388FA29ABE0F6001B8A55 /* Persistence.swift in Sources */,
@@ -853,6 +855,7 @@
 				DD69DAC129D212560024831D /* SignInView.swift in Sources */,
 				481388F129ABE0F2001B8A55 /* ScreenBreakApp.swift in Sources */,
 				488340BF29C8AE8F00910A27 /* LaunchScreenManager.swift in Sources */,
+				48AE9AAD29F81CAF0092766C /* ApplicationsContainer.xcdatamodeld in Sources */,
 				48AE9AA829EB665B0092766C /* FamilyPickerView.swift in Sources */,
 				DDEEB70E29DB4560006FC9E5 /* CreateProfileView.swift in Sources */,
 				DD69DAC029D212560024831D /* LoginView.swift in Sources */,
@@ -923,6 +926,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48AE9AAA29F5FEE80092766C /* CustomFont.swift in Sources */,
 				48AE9A9229E5D0AF0092766C /* SBWidget.swift in Sources */,
 				48AE9A9029E5D0AF0092766C /* SBWidgetBundle.swift in Sources */,
 			);
@@ -1406,6 +1410,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = SBWidgetExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1436,6 +1441,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = SBWidgetExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1600,6 +1606,16 @@
 			);
 			currentVersion = 481388FC29ABE0F6001B8A55 /* ScreenBreak.xcdatamodel */;
 			path = ScreenBreak.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		48AE9AAB29F81CAF0092766C /* ApplicationsContainer.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				48AE9AAC29F81CAF0092766C /* ApplicationsContainer.xcdatamodel */,
+			);
+			currentVersion = 48AE9AAC29F81CAF0092766C /* ApplicationsContainer.xcdatamodel */;
+			path = ApplicationsContainer.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

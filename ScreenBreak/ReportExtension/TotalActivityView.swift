@@ -47,7 +47,7 @@ struct TotalActivityView: View {
                 }
 
             }
-            .padding()
+            
             
             if showHelp{
                 tutorialApps
@@ -89,11 +89,12 @@ struct TotalActivityView: View {
             
         }
         .disabled(showHelp)
+        .blur(radius: showHelp ? 20: 0)
     }
     
     var tutorialApps: some View{
         ZStack{
-            Color(.lightGray)
+            Color(.lightGray).opacity(0.7)
             VStack(alignment:.center){
                 Text("Tap on any icon to view the corresponding application's insights")
                     .customFont(.headline)
@@ -118,9 +119,7 @@ struct TotalActivityView: View {
         }
         .frame(width:UIScreen.main.bounds.width * 0.8, height: UIScreen.main.bounds.height * 0.3)
         .mask(RoundedRectangle(cornerRadius:20))
-        .shadow(color:Color("shadowColor"), radius:10)
-        
-        
+     
         .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color("Border"), lineWidth: 2))
         
     }

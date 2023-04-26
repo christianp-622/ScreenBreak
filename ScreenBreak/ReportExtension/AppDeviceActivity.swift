@@ -32,8 +32,8 @@ struct MoreInsightsReport{
     var longestActivity: String?
     var pickupsChartData: [(String, Double)]
     var notifsChartData: [(String, Double)]
-    
-    
+    var pickupsAppChartData: [(String, Double)]
+    var notifsAppChartData: [(String, Double)]
 }
 
 struct TopThreeReport {
@@ -53,7 +53,6 @@ struct AppDeviceActivity: Identifiable {
 
 struct ChartAndTopThreeReport{
     var totalDuration:TimeInterval
-    var categories: [CategoryDeviceActivity]
     var categoryChartData: [(String, Double)]
     var appChartData: [(String, Double)]
     var topApps: [AppDeviceActivity]
