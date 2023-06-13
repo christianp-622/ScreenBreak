@@ -24,12 +24,12 @@ AuthorizationCenter in the FamilyControls App Service as soon as the application
 
 ## Frameworks and Extensions
 
-### SwiftUI
+#### *SwiftUI*   
 We utilize the SwiftUI framework, which provides a modern and intuitive way to create a 
-visually pleasing user interface.
+visually pleasing user interface.  
+<br>
 
-
-### Device Acitivity Report Extension
+#### *Device Acitivity Report Extension*
 We make use of the Device Activity Report Extension to retrieve insights on an individual 
 user's device activity. Each application on the user's device is represented by an ActivityToken, 
 while each category is represented by a CategoryToken. Additionally, Web DomainTokens represent 
@@ -38,42 +38,48 @@ web domains. The insights obtained include:
 * Number of pickups per application
 * Category for a given application
 * Screen time per applciation/category
-* The time at which a user had their first device pickup of the day
+* The time at which a user had their first device pickup of the day  
+<br>
 
-### Family Controls
+#### *Family Controls*
 The FamilyControls App Service allows us to utilize a FamilyActivityPicker, which displays a 
 list of all the applications, categories, and web domains on a user's device. Users can choose 
 any number of items from the list, and a viewModel is created to save those selections as a 
 FamilyActivitySelection. The saved selection enables us to set shields on the chosen items 
-and lift those shields as well.
+and lift those shields as well.  
+<br>
 
-### Device Activity Monitor Extension
+#### *Device Activity Monitor Extension*
 The Device Activity Monitor enables us to lift a shield, allowing us to create multiple shield 
-time intervals instead of a singular option. 
+time intervals instead of a singular option.   
+<br>
 
-### Sheild Cofiguration Extension
-This extension allows us to create a custom shield with our logo and personalized message on it.
+#### *Sheild Cofiguration Extension*
+This extension allows us to create a custom shield with our logo and personalized message on it.  
+<br>
 
-### Widget Extension
+#### *Widget Extension*
 The Widget Extension allows us to create a custom widget for our application. According to Apple's 
 guidelines, the widget should provide glanceable information and stay up to date with your application. 
 Our widget shows whether the user is in restriction mode or not, and displays the time at which their 
 restriction mode will be lifted (if they are in restriction mode). To enable communication between the 
 extension and the main app, we created an app group, providing a line of communication between the 
-widget and the main app.
-
+widget and the main app.  
+<br>
 
 ## Package Dependencies
 
-#### RiveRuntime
+#### *RiveRuntime*
 RiveRuntime enables us to implement an animated navigation bar for seamless navigation throughout our app.
 Additionally, it provides a beautifully animated background for our onboarding screen. We chose Rive assets 
-over Lottie assets due to their smaller size.
+over Lottie assets due to their smaller size.  
+<br>
 
-#### SwiftUICharts
+#### *SwiftUICharts*
 We use SwiftUICharts to properly display the data gathered from the Device Activity Report. The charts 
 are animated, offer various color schemes, and adapt to light and dark mode. Users can interact with 
-the charts to explore the data.
+the charts to explore the data.  
+<br>
 
 
 ## Files (In progress...)
@@ -115,18 +121,18 @@ the charts to explore the data.
 
 ## Demo
 
-### Launch Screen
+#### Launch Screen
 <img src="https://github.com/christianp-622/ScreenBreak/assets/74067404/79debd98-d4e7-4a4e-9f8c-b9c1bd325597" alt= "Animated GIF"
     width="200" height="450">
     
-### Onboarding Screen (Light Mode)
+#### Onboarding Screen (Light Mode)
 <img src="https://github.com/christianp-622/ScreenBreak/assets/74067404/3dea6fdf-6d45-4629-bb2f-065e212bc5f1" alt="Animated GIF"     width="200" height="450">
 
-### Home Screen
+#### Home Screen
  <img src="https://github.com/christianp-622/ScreenBreak/assets/74067404/659a5501-86c4-4d38-aaef-2b6dc9f1af89" alt= "Animated GIF"
     width="200" height="450">
     
-### Screen Time View
+#### Screen Time View
 <p float="left">
   <img src="https://github.com/christianp-622/ScreenBreak/assets/74067404/44f8a661-7cd4-4a19-938a-c0a37fa1c84d" alt= "Animated GIF"
     width="200" height="450">
@@ -134,7 +140,7 @@ the charts to explore the data.
     width="200" height="450">
 </p>
 
-### Restrictions Screen
+#### Restrictions Screen
 <p float="left">
   <img src="https://github.com/christianp-622/ScreenBreak/assets/74067404/04462a0a-4736-40a9-80c3-8819d18daf81" alt= "Animated GIF"
     width="200" height="450">
@@ -144,22 +150,22 @@ the charts to explore the data.
     width="200" height="450">
 </p>
 
-### Custom Sheild
+#### Custom Sheild
 <img src="https://github.com/christianp-622/ScreenBreak/assets/74067404/6bf29e3f-cab9-4e03-86fb-68a8af805faa" alt= "Animated GIF"
     width="200" height="450">
 
-### More Insights Screen 
+#### More Insights Screen 
 <img src="https://github.com/christianp-622/ScreenBreak/assets/74067404/e02d9886-fad0-42ea-b226-7fafff0b49ae" alt= "Animated GIF"
     width="200" height="450">
     
-### Widget
+#### Widget
 <p float="left">
   <img src="https://github.com/christianp-622/ScreenBreak/assets/74067404/eeb61be1-f3e7-4bf1-ad5f-447228d40734" alt= "Animated GIF"              width="200" height="450">
   <img src="https://github.com/christianp-622/ScreenBreak/assets/74067404/76c8bd64-4173-4460-804c-dfb73c9806ef" alt= "Animated GIF"              width="200" height="450">
   <img src="https://github.com/christianp-622/ScreenBreak/assets/74067404/ce163a06-5544-433e-a09c-d38d78b0d3df" alt= "Animated GIF"              width="200" height="450">
 </p>
 
-### Notifications
+#### Notifications
 <img src="https://github.com/christianp-622/ScreenBreak/assets/74067404/cdab27bd-2fe9-4248-9e39-a536ce1899df" alt= "Animated GIF"
     width="200" height="450">
 
