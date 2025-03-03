@@ -176,3 +176,5 @@ codebase - https://www.youtube.com/watch?v=h4vyOz4Tztg&t=2878s
 
 ## Roadmap (In Progress....)
 For future iterations of this project, we want to implement a couple of things:
+- Refactor to conform solely to MVVM architecture
+- Implement Unit tests for various modules
