@@ -9,10 +9,9 @@ capabilites of the iOS 16 Screen Time API.
 1. [Project Overview](#project-overview)
 2. [Frameworks and Extensions](#frameworks-and-extensions)
 3. [Package Dependencies](#package-dependencies)
-4. [Files](#files)
-5. [Demo](#demo)
-6. [Acknowledgment](#acknowledgment)
-7. [Roadmap](#roadmap)
+4. [Demo](#demo)
+5. [Acknowledgment](#acknowledgment)
+6. [Roadmap](#roadmap)
 
 
 ## Project Overview
@@ -81,44 +80,6 @@ are animated, offer various color schemes, and adapt to light and dark mode. Use
 the charts to explore the data.  
 <br>
 
-
-## Files (In progress...)
-
-- **/ScreenBreak**: Contains the source code files of the iOS app.
-
-  - `ScreenBreakApp.swift`: Main app file. Initializes all environment objects and invokes the launch screen.
-
-  - **/RiveAssets**: Contains rive asset files
-  - **/Views**: Contains all the views for the application
-    - `HomeView.swift`: 
-    - `ContentView.swift`: 
-
-- **/RiveAssets**: Contains rive asset files
-    
-- **/ReportExtension**: 
-  - `ReportExtension.swift`: 
-  - `TotalAcitivtyReport.swift`: 
-  - `TotalActivityView.swift`: 
-  - `TopAppsReport.swift`: 
-  - `TopThreeView.swift`: 
-  - `HomeReport.swift`: 
-  - `HomeReportView.swift`: 
-  - `WidgetReport.swift`: 
-  - `WidgetReportView.swift`: 
-  - `TotalPickupsReport.swift`: 
-  - `PickypsChartView.swift`: 
-  - `CardView.swift`: View that formats an applciation icon and it's name into a structured view
-  - `AppDeviceActivity.swift`: Defines the models for the device activity report
-- **/DeviceActivityMonitor**: 
-  - `DeviceActivityMonitorExtension.swift`:
-- **/shield**: 
-  - `ShieldConfigurationExtension.swift`:
-  - `sblogosmall.png`:
-- **/SBWidget**: 
-  - `SBWidget.swift`:
-
- 
-
 ## Demo
 
 #### Launch Screen
@@ -174,7 +135,7 @@ Special thanks to:
 DesignCode Youtube for the 3-hour tutorial with Rive Animations, custom fonts, as well as a provided 
 codebase - https://www.youtube.com/watch?v=h4vyOz4Tztg&t=2878s
 
-## Roadmap (In Progress....)
+## Roadmap
 For future iterations of this project, we want to implement a couple of things:
 - Refactor to conform solely to MVVM architecture
 - Implement Unit tests for various modules
