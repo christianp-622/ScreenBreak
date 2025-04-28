@@ -15,11 +15,11 @@ capabilites of the iOS 16 Screen Time API.
 
 
 ## Project Overview
-The goal of this project was to utilize the Screentime API (DeviceActivity, ManagedSettings, 
-FamilyControls) to provide users with insights on the apps they use. With the announcement 
-at WWDC22, individual authorization to set shields on apps is now possible, allowing users 
-to have control over their own usage. In this application, authorization is invoked via the 
-AuthorizationCenter in the FamilyControls App Service as soon as the application is launched.
+The goal of this project was to leverage Apple’s Screen Time APIs (DeviceActivity, ManagedSettings, FamilyControls) to give users two capabilities:
+- Usage insights – clear, daily analytics on which apps and categories consume the most time.
+- Self-lock – let users “shield” any app for a user-defined interval, helping them stay accountable and reduce distractions.
+
+On first launch, the app requests the necessary privileges through AuthorizationCenter (FamilyControls) so each user can grant personal control—made possible by new individual-authorization rules introduced at WWDC 22.
 
 ## Frameworks and Extensions
 
@@ -29,23 +29,34 @@ visually pleasing user interface.
 <br>
 
 #### *Device Acitivity Report Extension*
-We make use of the Device Activity Report Extension to retrieve insights on an individual 
-user's device activity. Each application on the user's device is represented by an ActivityToken, 
-while each category is represented by a CategoryToken. Additionally, Web DomainTokens represent 
-web domains. The insights obtained include:
-* Number of notifications per applcation
-* Number of pickups per application
-* Category for a given application
-* Screen time per applciation/category
-* The time at which a user had their first device pickup of the day  
+
+Retrieves per-user analytics by mapping:
+
+| Token Type  | Represents |
+| ------------- | ------------- |
+| ActivityToken  | A single app  |
+| CategoryToken  | An Apple-defined category (e.g., Social, Productivity) |
+| WebDomainToken  | A specific web domain  |
+
+Captured metrics include:
+
+- Notification count per app
+- Pick-up count per app (times the device is woken)
+- Category for each app or domain
+- Screen-time totals per app and per category
+- Time of first pick-up each day
 <br>
 
 #### *Family Controls*
-The FamilyControls App Service allows us to utilize a FamilyActivityPicker, which displays a 
-list of all the applications, categories, and web domains on a user's device. Users can choose 
-any number of items from the list, and a viewModel is created to save those selections as a 
-FamilyActivitySelection. The saved selection enables us to set shields on the chosen items 
-and lift those shields as well.  
+Leveraged the FamilyActivityPicker (from FamilyControls) to present users with a complete list of apps, categories, and web domains installed on their device. The flow is:
+- User selects items in the picker (multiple choice).
+- A view-model converts those choices into a persisted FamilyActivitySelection.
+
+The stored selection is used by the Managed Settings layer to
+• apply shields—temporarily blocking the chosen apps, categories, or domains, and
+• lift shields on demand or when the timer expires.
+
+This pattern cleanly separates UI, state management, and policy enforcement while giving users granular control over their own distractions.
 <br>
 
 #### *Device Activity Monitor Extension*
