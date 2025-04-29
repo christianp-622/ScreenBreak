@@ -53,8 +53,8 @@ Leveraged the FamilyActivityPicker (from FamilyControls) to present users with a
 - A view-model converts those choices into a persisted FamilyActivitySelection.
 
 The stored selection is used by the Managed Settings layer to
-• apply shields—temporarily blocking the chosen apps, categories, or domains, and
-• lift shields on demand or when the timer expires.
+- apply shields—temporarily blocking the chosen apps, categories, or domains, and
+- lift shields on demand or when the timer expires.
 
 This pattern cleanly separates UI, state management, and policy enforcement while giving users granular control over their own distractions.
 <br>
